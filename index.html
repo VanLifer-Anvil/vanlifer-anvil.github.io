@@ -10,11 +10,16 @@
 *{box-sizing:border-box}
 body{margin:0;background:var(--paper);color:var(--ink);font-family:Georgia,"Times New Roman",serif;line-height:1.6}
 .topline{background:var(--ink);color:#fff;font:600 .85rem/1 system-ui,-apple-system,"Segoe UI",Arial,sans-serif;letter-spacing:.04em;padding:10px 20px}
-header{max-width:960px;margin:0 auto;padding:48px 20px 24px}
+header{max-width:1040px;margin:0 auto;padding:48px 20px 24px}
 .eyebrow{font:700 .8rem system-ui,-apple-system,"Segoe UI",Arial,sans-serif;text-transform:uppercase;letter-spacing:.08em;color:var(--green)}
 h1{font-size:clamp(2rem,5vw,3rem);line-height:1.15;margin:.3em 0 .3em}
 header p{font-size:1.15rem;color:var(--muted);max-width:640px;margin:0}
-main{max-width:960px;margin:0 auto;padding:16px 20px 56px;display:grid;gap:22px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+main{max-width:1040px;margin:0 auto;padding:8px 20px 56px}
+section{margin:0 0 34px}
+.sec{font:700 .85rem system-ui,-apple-system,"Segoe UI",Arial,sans-serif;text-transform:uppercase;letter-spacing:.1em;color:var(--ink);border-bottom:2px solid var(--yellow);padding-bottom:8px;margin:0 0 18px}
+.grid{display:grid;gap:22px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+a.card.prop{border-top-color:#0D3B66}
+a.card.prop .go{color:#0D3B66}
 a.card{display:block;text-decoration:none;color:inherit;background:#fff;border:1px solid var(--line);border-top:6px solid var(--blue);border-radius:14px;padding:26px 24px;transition:transform .15s,box-shadow .15s}
 a.card.map{border-top-color:var(--green)}
 a.card:hover,a.card:focus{transform:translateY(-3px);box-shadow:0 10px 24px rgba(25,56,75,.12)}
@@ -23,7 +28,7 @@ a.card:hover,a.card:focus{transform:translateY(-3px);box-shadow:0 10px 24px rgba
 .card p{margin:0 0 1em;color:var(--muted)}
 .card .go{font:700 .95rem system-ui,-apple-system,"Segoe UI",Arial,sans-serif;color:var(--blue)}
 a.card.map .go{color:var(--green)}
-footer{border-top:1px solid var(--line);max-width:960px;margin:0 auto;padding:20px;font:.9rem system-ui,-apple-system,"Segoe UI",Arial,sans-serif;color:var(--muted)}
+footer{border-top:1px solid var(--line);max-width:1040px;margin:0 auto;padding:20px;font:.9rem system-ui,-apple-system,"Segoe UI",Arial,sans-serif;color:var(--muted)}
 footer a{color:var(--blue)}
 </style>
 </head>
@@ -35,18 +40,86 @@ footer a{color:var(--blue)}
 <p>Published articles, practical guides, research and interactive tools.</p>
 </header>
 <main>
+<section>
+<h3 class="sec">Guides &amp; articles</h3>
+<div class="grid">
 <a class="card" href="VanLifers_Campervan_WiFi_Guide.html">
 <div class="tag">Guide</div>
 <h2>Campervan Wi-Fi Explained</h2>
 <p>Phone hotspots, pocket MiFi, installed routers, aerials, SIM cards and satellite internet – what each does and what makes sense for your van.</p>
 <span class="go">Read the guide →</span>
 </a>
+<a class="card" href="campervan-aircon-guide.html">
+<div class="tag">Article</div>
+<h2>Campervan Air Conditioning</h2>
+<p>What I learned after spending two weeks researching campervan air conditioning.</p>
+<span class="go">Read the article →</span>
+</a>
+<a class="card" href="luton_aircon_guide_2026.html">
+<div class="tag">Guide</div>
+<h2>Luton Aircon Guide 2026</h2>
+<p>Air conditioning options for UK self-build Luton campervan conversions.</p>
+<span class="go">Read the guide →</span>
+</a>
+</div>
+</section>
+<section>
+<h3 class="sec">Interactive tools</h3>
+<div class="grid">
 <a class="card map" href="coverage-map/">
 <div class="tag">Interactive map</div>
 <h2>Open-Network SIM Coverage Map</h2>
 <p>Compare EE, O2, Three and Vodafone 4G/5G coverage with an open-network SIM that uses whichever is strongest. Postcode search included.</p>
 <span class="go">Open the map →</span>
 </a>
+</div>
+</section>
+<section>
+<h3 class="sec">Electrasthetics proposal</h3>
+<div class="grid">
+<a class="card prop" href="Electrasthetics_Index.html">
+<div class="tag">Proposal index</div>
+<h2>Electrasthetics – Full Proposal</h2>
+<p>The 14-chapter commercial product proposal for Anvil, from Executive Summary to Commercial Development.</p>
+<span class="go">Open the index →</span>
+</a>
+<a class="card prop" href="Electrasthetics_Envisioned_Markets.html">
+<div class="tag">Supporting document</div>
+<h2>Electrasthetics – Platform Strategy</h2>
+<p>A universal surface-mounted electrical architecture: markets, sectors and why now.</p>
+<span class="go">Read the document →</span>
+</a>
+<a class="card prop" href="Electrasthetics_Production_Strategy.html">
+<div class="tag">Supporting document</div>
+<h2>Electrasthetics – Production &amp; Scale-Up Strategy</h2>
+<p>From prototype to high-volume production: the production ladder, materials and decision gates.</p>
+<span class="go">Read the document →</span>
+</a>
+</div>
+</section>
+<section>
+<h3 class="sec">Products &amp; reviews</h3>
+<div class="grid">
+<a class="card prop" href="solarraise_ontouch_v7.html">
+<div class="tag">Product</div>
+<h2>SolarRaise™ OneTouch</h2>
+<p>The solar panel tilt carrier from VanLifer Products.</p>
+<span class="go">View the product →</span>
+</a>
+<a class="card prop" href="VanLifers_Product_Portfolio_Updated_Imagery.html">
+<div class="tag">Portfolio</div>
+<h2>Future Product Range Opportunities</h2>
+<p>A selection of products and product ranges in development.</p>
+<span class="go">View the portfolio →</span>
+</a>
+<a class="card prop" href="VanLifers_Website_Review.html">
+<div class="tag">Review</div>
+<h2>Campervan &amp; Motorhome Wi-Fi Kits – Page Review</h2>
+<p>Review of the Anvil Mobile van life Wi-Fi kits page.</p>
+<span class="go">Read the review →</span>
+</a>
+</div>
+</section>
 </main>
 <footer>VanLifers by Anvil Mobile · <a href="https://anvilmobile.com/solutions/vanlife-motorhomes">anvilmobile.com</a></footer>
 </body>

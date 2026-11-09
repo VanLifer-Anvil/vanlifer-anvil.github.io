@@ -1,0 +1,5614 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REVIEW — Campervan &amp; Motorhome Wi-Fi Kits | Van Life | Anvil Mobile</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="https://anvilmobile.com/assets/anvil-logo-A.svg">
+    <style>/* Anvil Mobile,  Styles */
+
+/* ============================================
+   RESET & BASE
+   ============================================ */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --grey-900: #111827;
+    --grey-700: #374151;
+    --grey-500: #6b7280;
+    --grey-400: #9ca3af;
+    --grey-300: #d1d5db;
+    --grey-200: #e5e7eb;
+    --grey-100: #f3f4f6;
+    --grey-50: #f9fafb;
+    --white: #ffffff;
+    --blue-500: #3b82f6;
+    --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+    /* Desktop proportional scaling,  1:1 at 1440px, scales linearly */
+    zoom: calc(100vw / 1440);
+    overflow-x: hidden;
+}
+
+body {
+    font-family: var(--font);
+    font-weight: 300;
+    color: var(--grey-700);
+    background: var(--white);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+/* <img> is wrapped in <picture> (AVIF/WebP sources). Keep the wrapper transparent
+   to layout so the inner <img> behaves exactly as a direct child would. */
+picture {
+    display: contents;
+}
+
+/* ============================================
+   HEADER
+   ============================================ */
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: none;
+}
+
+.header-bar {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    align-items: center;
+    height: 60px;
+}
+
+/* Between the mobile breakpoint and roughly 1050px the header runs out of room: the
+   logo, the phone block and five nav items need more than a 3rem gap allows, and they
+   start colliding. Tightening the gap and the side padding in that band buys back
+   ~110px, which is enough for those plus the search trigger.
+   Contact is now a sixth top-level item, worth about another 90px, so the per-link
+   padding comes in across the same band to pay for it. */
+@media (min-width: 769px) and (max-width: 1100px) {
+    .header-bar {
+        gap: 1.5rem;
+        padding: 0 1.25rem;
+    }
+
+    .nav-link {
+        padding: 0 0.7rem;
+    }
+}
+
+.header-logo {
+    overflow: hidden;
+    width: 120px;
+    flex-shrink: 0;
+}
+
+.header-logo img {
+    height: 22px;
+    display: block;
+    min-width: 120px;
+}
+
+/* Scroll Fade Variant (only used on homepage) */
+.header-logo.scroll-fade {
+    width: calc(var(--sp, 1) * 120px);
+}
+
+.header-logo.scroll-fade img {
+    opacity: var(--sp, 1);
+}
+
+/* "Speak to a Specialist" contact — pinned top-left of the fixed header so it's
+   visible at all times. Absolute so it doesn't disturb the centered nav cluster. */
+.header-phone {
+    position: absolute;
+    left: 2rem;
+    top: 0;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: var(--grey-900);
+    z-index: 1001;
+}
+
+.header-phone-icon {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    color: var(--blue-500);
+}
+
+.header-phone-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.15;
+}
+
+.header-phone-label {
+    font-size: 0.62rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--grey-500);
+}
+
+.header-phone-number {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--grey-900);
+    transition: color 0.2s ease;
+}
+
+.header-phone:hover .header-phone-number {
+    color: var(--blue-500);
+}
+
+/* Mid widths: the centered nav nears the left edge — drop the label, keep the number. */
+@media (min-width: 769px) and (max-width: 1080px) {
+    .header-phone-label { display: none; }
+}
+
+.header-nav {
+    margin-left: 0;
+}
+
+.nav-list {
+    display: flex;
+    align-items: center;
+    gap: 0;
+}
+
+/* ---- Nav Links ---- */
+.nav-item {
+    position: relative;
+}
+
+.nav-link {
+    display: block;
+    padding: 0 1.15rem;
+    line-height: 60px;
+    font-size: 0.82rem;
+    font-weight: 400;
+    color: var(--grey-500);
+    letter-spacing: 0.01em;
+    transition: color 0.2s ease;
+    white-space: nowrap;
+}
+
+.nav-link:hover {
+    color: var(--grey-900);
+}
+
+/* ============================================
+   DROPDOWN,  Full-width White Panel
+   ============================================ */
+.dropdown-expand {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    right: 0;
+
+    /* Hidden by default */
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    /* White panel */
+    background: var(--white);
+    border-radius: 0;
+    border: none;
+    border-bottom: 1px solid var(--grey-200);
+
+    padding: 3rem 0 3.5rem;
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+    z-index: 999;
+}
+
+/* Show on hover */
+.nav-item.has-dropdown:hover .dropdown-expand {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+/* Hide mobile-only back button on desktop */
+.mobile-back-btn {
+    display: none;
+}
+
+/* Active nav link highlight */
+.nav-item.has-dropdown:hover .nav-link {
+    color: var(--grey-900);
+}
+
+/* ---- Dropdown Inner Layout ---- */
+.dropdown-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 3rem;
+    display: flex;
+    gap: 4rem;
+    align-items: flex-start;
+}
+
+/* Left zone: category heading */
+.dropdown-left {
+    flex-shrink: 0;
+    min-width: 180px;
+    padding-top: 0.15rem;
+}
+
+/* Category title */
+.dropdown-heading {
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: var(--grey-900);
+    letter-spacing: -0.02em;
+    margin: 0;
+    white-space: nowrap;
+}
+
+/* Right zone: link columns */
+.dropdown-links {
+    display: flex;
+    gap: 3.5rem;
+    flex: 1;
+}
+
+.dropdown-col {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    min-width: 180px;
+}
+
+.dropdown-label {
+    display: block;
+    font-size: 0.6rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--grey-400);
+    margin-bottom: 0.75rem;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.dropdown-col a {
+    display: block;
+    padding: 0.35rem 0;
+    font-size: 0.85rem;
+    font-weight: 300;
+    color: var(--grey-500);
+    transition: color 0.15s ease;
+    white-space: nowrap;
+}
+
+.dropdown-col a:hover {
+    color: var(--grey-900);
+}
+
+/* ============================================
+   MAIN CONTENT
+   ============================================ */
+main {
+    padding-top: 60px;
+    /* offset for fixed header */
+}
+
+/* ============================================
+   HERO
+   ============================================ */
+.hero {
+    text-align: center;
+    padding: calc(1.5rem + var(--sp, 1) * 2.5rem) 2rem calc(3rem + var(--sp, 1) * 3rem);
+}
+
+/* Centered logo,  fills viewport gap at scroll=0, collapses on scroll */
+.hero-logo {
+    display: block;
+    margin: 0 auto;
+    height: calc(clamp(60px, 100dvh - 840px, 300px) * (1 - var(--sp, 1)));
+    max-width: 400px;
+    object-fit: contain;
+    opacity: calc(1 - var(--sp, 1) * 2);
+    overflow: hidden;
+}
+
+.hero-headline {
+    font-size: 3.2rem;
+    font-weight: 300;
+    color: var(--grey-900);
+    line-height: 1.3;
+    letter-spacing: -0.02em;
+}
+
+/* ---- Word Rotator ---- */
+.word-rotator {
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: bottom;
+    height: 1.3em;
+    /* match line-height */
+    position: relative;
+    text-align: left;
+}
+
+.word-track {
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.5s ease;
+}
+
+.word {
+    display: block;
+    height: 1.3em;
+    line-height: 1.3;
+    color: var(--blue-500);
+    font-weight: 500;
+    flex-shrink: 0;
+}
+
+/* ---- Subheading ---- */
+.hero-sub {
+    margin-top: 1.5rem;
+    font-size: 1.1rem;
+    font-weight: 300;
+    color: var(--grey-400);
+    letter-spacing: 0.01em;
+}
+
+/* ============================================
+   SINGLE TILE PAGE HERO
+   ============================================ */
+.hero-full-bg {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 60px);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: left;
+    overflow: hidden;
+    background: var(--grey-900);
+}
+
+.hero-full-bg img.hero-bg-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.hero-full-bg::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.3) 50%, transparent 100%);
+    z-index: 2;
+}
+
+.hero-full-content {
+    position: relative;
+    z-index: 3;
+    padding: 0 max(2rem, 8vw);
+    max-width: 1200px;
+}
+
+.hero-full-title {
+    font-size: clamp(3rem, 6vw, 6rem);
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+}
+
+.hero-full-subtitle {
+    font-size: clamp(1.2rem, 2vw, 1.8rem);
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.4;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    max-width: 600px;
+}
+
+/* ============================================
+   STARLINK PAGE
+   ============================================ */
+.sl-fixed-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.sl-hero {
+    position: relative;
+    width: 100%;
+    /* The photograph is 3:2. At 56vh the hero was about 2.9:1, so only the middle
+       half of the image survived the crop and the dish was clipped to a corner.
+       Taller means less is thrown away. */
+    height: 68vh;
+    min-height: 440px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    background: #000;
+    padding-top: 10vh;
+    /* Pushes content slightly below center */
+}
+
+/* .sl-products pulls up 150px into the bottom of the hero. The hero's height is 68vh
+   with a 440px floor and its copy is vertically centred, so on any viewport that is not
+   very tall the copy's bottom edge lands inside that 150px strip and the product box is
+   drawn over the text. Measured on the live site before this rule: 113px of overlap at
+   1280x600, 94px at 1280x720, 86px at 1366x768, 53px at 1440x900, 30px at 1024x768 —
+   i.e. essentially every laptop.
+
+   Reserving the strip as hero padding is the fix rather than nudging the margin: it
+   takes the overlapped area out of the centring box entirely, so the copy cannot be
+   placed there at any height. The 10vh top padding goes with it — it pushed the copy
+   down toward the collision, which is the opposite of what this needs.
+
+   :has() scopes it to the heroes that actually have a products block beneath them.
+   The other four .sl-hero pages (data-plans, shop, vanlife, value-added-services) have
+   nothing pulling up into them and keep their existing composition untouched. */
+/* The real problem was never the negative margin on its own — it was that the hero is
+   too short for its own copy. At 1280x600 the hero bottoms out at its 440px floor while
+   the copy runs to 463px, so the copy already spilled past the hero before .sl-products
+   pulled anything up over it.
+
+   So: give these heroes the height they need, and make the overlap small enough that a
+   normally-centred copy clears it. Reserving big padding at top and bottom also stops
+   the collision, but it strands the copy high in the frame with a dead gap beneath —
+   the hero stops looking composed. Height + a lighter overlap keeps the copy centred,
+   which is the whole point of the photograph. */
+.sl-hero:has(+ .sl-products) {
+    min-height: 560px;
+    padding-bottom: 90px;
+}
+
+.sl-hero-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Full width already; the crop is vertical. Pulling the window up puts the
+       dish and the roofline in frame instead of leaving them clipped at the top. */
+    object-position: 70% 26%;
+    z-index: 1;
+}
+
+.sl-hero-content {
+    position: relative;
+    z-index: 3;
+    padding: 0 2rem 6rem;
+    max-width: 900px;
+}
+
+/* White is the default because almost every .sl-hero is dark behind the copy: six
+   pages paint the solid #1e3a5f Anvil panel over the left of the hero
+   (.sl-hero-left-panel), and the two Starlink kit pages sit on a night sky. Only
+   one hero photograph is light. Set the type colour on the shared rule and it is
+   wrong on eight pages out of nine, which is exactly how the copy went dark on the
+   navy panels — so the light treatment is opt-in via .sl-hero--light below. */
+.sl-hero-title {
+    font-size: clamp(2.8rem, 6vw, 5.5rem);
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+    margin-bottom: 1rem;
+    text-shadow: 0 4px 30px rgba(0, 0, 0, 0.6);
+}
+
+.sl-hero-subtitle {
+    font-size: clamp(1rem, 1.8vw, 1.4rem);
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.5;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* Light-photograph heroes (currently only /starlink-business, a bright daytime sky).
+   Navy, not white: white type measures 1.63:1 for the title and 1.39:1 for the
+   subtitle on that image, navy measures 10.68:1 and 12.52:1, and it needs no dark
+   wash over the photograph to get there. The glow is white rather than black for
+   the same reason,  it lifts the type off the clouds without dulling the picture. */
+.sl-hero--light .sl-hero-title {
+    color: #0d1b2a;
+    text-shadow: 0 2px 24px rgba(255, 255, 255, 0.65);
+}
+
+.sl-hero--light .sl-hero-subtitle {
+    font-weight: 400;
+    color: #0d1b2a;
+    text-shadow: 0 1px 14px rgba(255, 255, 255, 0.7);
+}
+
+/* Bottom fade,  transparency gradient at bottom of hero */
+.sl-hero-fade {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 220px;
+    background: linear-gradient(to top, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* Product Boxes */
+.sl-products {
+    position: relative;
+    z-index: 10;
+    padding: 0 2rem 5rem;
+    max-width: 1400px;
+    /* Was -150px. A deep pull-up needs the hero to give up 150px of its middle, which
+       strands the copy high. 60px still tucks the boxes under the photograph's edge
+       without reaching the text. */
+    margin: -60px auto 0;
+    /* Overlaps bottom of the image */
+}
+
+.sl-products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+.sl-product-box {
+    background: #ffffff;
+    color: #000000;
+    border: 2px solid #000000;
+    border-radius: 0;
+    padding: 2.5rem 2.5rem 2.5rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    transition: background 0.2s ease;
+    overflow: hidden;
+}
+
+.sl-product-box:hover {
+    background: #fafafa;
+}
+
+.sl-product-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: center;
+    z-index: 2;
+    text-align: center;
+    flex: 1;
+}
+
+.sl-product-header .sl-product-link {
+    margin-top: auto;
+}
+
+.sl-product-title {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #000000;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.3rem;
+    text-align: center;
+}
+
+.sl-product-desc {
+    font-size: 0.95rem;
+    font-weight: 300;
+    color: #333333;
+    line-height: 1.4;
+    margin-top: 0;
+    margin-bottom: 0.8rem;
+    position: relative;
+    z-index: 2;
+}
+
+.sl-product-link {
+    display: inline-block;
+    padding: 0.6rem 1.6rem;
+    background: var(--blue-500);
+    color: var(--white);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 980px;
+    border: 1px solid var(--blue-500);
+    transition: all 0.2s ease;
+}
+
+.sl-product-link:hover {
+    background: #2563eb;
+    border-color: #2563eb;
+}
+
+.sl-product-img {
+    display: block;
+    flex: 1;
+    width: 70%;
+    max-height: 65%;
+    object-fit: contain;
+    object-position: bottom right;
+    align-self: center;
+    margin-top: auto;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Responsive,  stack product boxes on mobile */
+@media (max-width: 768px) {
+    .sl-products-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* 4-column product grid variant */
+.sl-products-grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+@media (max-width: 900px) {
+    .sl-products-grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ============================================
+   STARLINK,  SHARED SECTION MODULE
+   ============================================ */
+.sl-section {
+    position: relative;
+    z-index: 10;
+    background: #ffffff;
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 4rem 3rem;
+}
+
+.sl-section-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #000000;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+.sl-section-body {
+    font-size: 1rem;
+    font-weight: 300;
+    color: #333333;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+    max-width: 640px;
+}
+
+/* ============================================
+   SECTION 1,  HARDWARE SCHEMATIC (Split-Frame)
+   ============================================ */
+.sl-schematic-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    position: relative;
+}
+
+/* Vertical divider between text and image */
+.sl-schematic-grid::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 1px;
+    background: #e5e7eb;
+}
+
+.sl-schematic-text {
+    padding-right: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.sl-schematic-text .sl-section-body {
+    max-width: none;
+}
+
+.sl-schematic-visual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 3rem;
+}
+
+.sl-schematic-img {
+    width: 100%;
+    max-width: 420px;
+    height: auto;
+    object-fit: contain;
+    border-radius: 14px;
+    /* No grayscale filter here any more: the previous rule desaturated the image
+       to near-white, which is what made the old hardware shot unreadable against
+       the page. */
+}
+
+/* ============================================
+   SECTION 2,  DATA HORIZON (Horizontal Line)
+   ============================================ */
+.sl-horizon .sl-section-title,
+.sl-horizon .sl-section-body {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.sl-horizon-intro {
+    margin-bottom: 2.5rem;
+    font-weight: 400;
+    color: #000000;
+}
+
+.sl-horizon-readouts {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    padding-bottom: 2rem;
+}
+
+.sl-readout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+}
+
+.sl-readout-value {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #000000;
+    letter-spacing: -0.03em;
+    line-height: 1;
+}
+
+.sl-readout-unit {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #000000;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-top: 0.15rem;
+}
+
+.sl-readout-label {
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: #6b7280;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin-top: 0.5rem;
+}
+
+.sl-horizon-line {
+    width: 100%;
+    height: 1px;
+    background: #000000;
+    margin: 0 0 2rem;
+}
+
+.sl-horizon-note {
+    font-style: italic;
+    color: #6b7280;
+}
+
+/* ============================================
+   SECTION 3,  INDUSTRY GRID (Crosshair Grid)
+   ============================================ */
+.sl-crosshair .sl-section-title,
+.sl-crosshair .sl-section-body {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.sl-crosshair-label {
+    text-align: center;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #6b7280;
+    margin: 2rem 0 1.5rem;
+}
+
+.sl-crosshair-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Horizontal divider */
+.sl-crosshair-grid::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: #e5e7eb;
+    z-index: 1;
+}
+
+/* Vertical divider */
+.sl-crosshair-grid::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 1px;
+    background: #e5e7eb;
+    z-index: 1;
+}
+
+/* Center + symbol */
+.sl-crosshair-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    font-weight: 300;
+    color: #9ca3af;
+    background: #ffffff;
+    border-radius: 50%;
+    z-index: 2;
+}
+
+.sl-quadrant {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2.5rem 1.5rem;
+    gap: 0.6rem;
+}
+
+.sl-quadrant-icon {
+    font-size: 1.6rem;
+    color: #000000;
+    opacity: 0.7;
+    line-height: 1;
+}
+
+.sl-quadrant-text {
+    font-size: 0.95rem;
+    font-weight: 400;
+    color: #111827;
+    line-height: 1.4;
+}
+
+/* ============================================
+   SECTION 4,  TACTICAL DEPLOYMENT (Accordion)
+   ============================================ */
+.sl-accordion-stack {
+    margin-top: 2rem;
+}
+
+.sl-accordion-item {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem 0;
+    border-top: 1px solid #e5e7eb;
+}
+
+.sl-accordion-item:last-child {
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.sl-accordion-marker {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #9ca3af;
+    letter-spacing: 0.05em;
+    font-variant-numeric: tabular-nums;
+    flex-shrink: 0;
+    width: 1.8rem;
+}
+
+.sl-accordion-text {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: #111827;
+    letter-spacing: -0.01em;
+}
+
+/* ============================================
+   SECTION 5,  ENTERPRISE LEDGER (Status Board)
+   ============================================ */
+.sl-ledger-list {
+    margin-top: 2rem;
+}
+
+.sl-ledger-row {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    padding: 1.2rem 0;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.sl-ledger-row:first-child {
+    border-top: 1px solid #f3f4f6;
+}
+
+.sl-tag {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.6rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 0.25rem 0.65rem;
+    border: 1px solid #d1d5db;
+    border-radius: 3px;
+    color: #374151;
+    background: #f9fafb;
+    flex-shrink: 0;
+    min-width: 65px;
+    text-align: center;
+}
+
+.sl-ledger-text {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #111827;
+    line-height: 1.4;
+}
+
+/* ============================================
+   SECTION 6,  HERITAGE SIGNATURE (Watermark)
+   ============================================ */
+.sl-heritage {
+    position: relative;
+    overflow: hidden;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+}
+
+.sl-heritage-watermark {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: clamp(6rem, 15vw, 14rem);
+    font-weight: 800;
+    color: rgba(0, 0, 0, 0.04);
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+    user-select: none;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.sl-heritage-content {
+    position: relative;
+    z-index: 1;
+    max-width: 600px;
+}
+
+.sl-heritage-subtitle {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #000000;
+    margin: 2rem 0 0.8rem;
+    letter-spacing: -0.01em;
+}
+
+.sl-heritage-list {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.sl-heritage-item {
+    font-size: 0.95rem;
+    font-weight: 400;
+    color: #111827;
+    padding: 0.6rem 0;
+    border-bottom: 1px solid #f3f4f6;
+    padding-left: 1rem;
+    position: relative;
+}
+
+.sl-heritage-item::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: #9ca3af;
+    font-weight: 300;
+}
+
+.sl-heritage-item:first-child {
+    border-top: 1px solid #f3f4f6;
+}
+
+/* ============================================
+   STARLINK SECTIONS,  RESPONSIVE
+   ============================================ */
+@media (max-width: 768px) {
+    .sl-section {
+        margin: 1rem auto;
+        padding: 2.5rem 1.5rem;
+    }
+
+    /* Schematic: stack vertically */
+    .sl-schematic-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .sl-schematic-grid::after {
+        display: none;
+    }
+
+    .sl-schematic-text {
+        padding-right: 0;
+        margin-bottom: 2rem;
+    }
+
+    .sl-schematic-visual {
+        padding-left: 0;
+    }
+
+    /* Horizon: wrap readouts */
+    .sl-horizon-readouts {
+        flex-wrap: wrap;
+        gap: 2rem;
+    }
+
+    .sl-readout-value {
+        font-size: 2.2rem;
+    }
+
+    /* Crosshair: single column */
+    .sl-crosshair-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .sl-crosshair-grid::before,
+    .sl-crosshair-grid::after {
+        display: none;
+    }
+
+    .sl-crosshair-center {
+        display: none;
+    }
+
+    .sl-quadrant {
+        padding: 1.5rem 1rem;
+        border-bottom: 1px solid #e5e7eb;
+    }
+
+    .sl-quadrant:last-child {
+        border-bottom: none;
+    }
+}
+
+/* ============================================
+   CORE TILES
+   ============================================ */
+.tiles-section {
+    padding: 0;
+}
+
+.tiles-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+}
+
+.tile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: clamp(1rem, 2vw, 2rem) clamp(0.6rem, 1vw, 1.2rem) clamp(0.8rem, 1.5vw, 1.5rem);
+    text-decoration: none;
+    border-radius: 0;
+    cursor: pointer;
+    min-height: 20vh;
+    aspect-ratio: 5 / 4;
+    color: #1d1d1f;
+    transition: opacity 0.2s ease;
+}
+
+.tile:hover {
+    opacity: 0.92;
+}
+
+/* ---- Title Block ---- */
+.tile-title {
+    font-size: clamp(1rem, 1.8vw, 1.8rem);
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    line-height: 1.1;
+    margin-bottom: clamp(0.2rem, 0.4vw, 0.4rem);
+}
+
+.tile-sub {
+    font-size: clamp(0.65rem, 0.85vw, 0.85rem);
+    font-weight: 300;
+    /* Fallback only. All four tiles are dark-topped and override this with white
+       below; this is here so the rule still reads sensibly on a light background. */
+    color: #4b5563;
+    margin-top: 0;
+    letter-spacing: 0.01em;
+}
+
+/* ---- CTAs ---- */
+.tile-ctas {
+    display: flex;
+    gap: clamp(0.4rem, 0.5vw, 0.75rem);
+    margin-top: clamp(0.5rem, 0.8vw, 1rem);
+}
+
+.tile-btn {
+    display: inline-block;
+    padding: clamp(0.3rem, 0.4vw, 0.45rem) clamp(0.6rem, 0.8vw, 1rem);
+    font-size: clamp(0.6rem, 0.7vw, 0.75rem);
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 980px;
+    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.tile-btn-fill {
+    background: var(--blue-500);
+    color: var(--white);
+    border: 1px solid var(--blue-500);
+}
+
+.tile-btn-fill:hover {
+    background: #2563eb;
+    border-color: #2563eb;
+}
+
+.tile-btn-outline {
+    background: transparent;
+    color: var(--blue-500);
+    border: 1px solid var(--blue-500);
+}
+
+.tile-btn-outline:hover {
+    background: var(--blue-500);
+    color: var(--white);
+}
+
+/* Light outline for dark tiles (Starlink) */
+.tile-btn-outline-light {
+    color: var(--white);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.tile-btn-outline-light:hover {
+    background: var(--white);
+    color: #1d1d1f;
+    border-color: var(--white);
+}
+
+/* ---- Visual ---- */
+.tile-visual {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 1rem 0;
+    overflow: hidden;
+    min-height: 0;
+}
+
+.tile-visual img {
+    max-height: 100%;
+    max-width: 90%;
+    object-fit: contain;
+}
+
+/* ---- Tile Gradients ---- */
+/* The brand palette, darkest to lightest across the row: navy, deep blue, royal
+   blue, sky blue. Each is a flat colour at the top fading to white lower down so
+   the product cut-outs still read.
+   The first three carry white type. Sky blue cannot: white on it is 2.14:1,
+   nowhere near the 4.5:1 the subtitle needs. Rather than reach outside the
+   palette for a grey, that tile takes the palette's own navy, which lands at
+   8.12:1 and reads as a deliberate pairing of the lightest colour with the
+   darkest. */
+.tile-esim {
+    background: linear-gradient(to bottom, #0d1b2a, #ffffff);
+    color: #ffffff;
+}
+
+.tile-starlink {
+    background: linear-gradient(to bottom, #1e3a8a, #ffffff);
+    color: #ffffff;
+}
+
+.tile-routers {
+    background: linear-gradient(to bottom, #2563eb, #ffffff);
+    color: #ffffff;
+}
+
+.tile-sdwan {
+    background: linear-gradient(to bottom, #38bdf8, #ffffff);
+    color: #0d1b2a;
+}
+
+.tile-esim .tile-sub,
+.tile-starlink .tile-sub,
+.tile-routers .tile-sub {
+    color: #ffffff;
+}
+
+.tile-sdwan .tile-sub {
+    color: #0d1b2a;
+}
+
+/* Dark tiles get a white outline button; without it the outline is brand blue on
+   a brand blue tile and effectively invisible. */
+.tile-esim .tile-btn-outline,
+.tile-starlink .tile-btn-outline,
+.tile-routers .tile-btn-outline {
+    color: var(--white);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.tile-esim .tile-btn-outline:hover,
+.tile-starlink .tile-btn-outline:hover,
+.tile-routers .tile-btn-outline:hover {
+    background: var(--white);
+    color: #1d1d1f;
+    border-color: var(--white);
+}
+
+/* Every filled button inside a tile is white, which reads cleanly against the
+   three dark colours and keeps the row consistent. Scoped to .tile deliberately:
+   the same class is used for a CTA on esim-iot.html that sits over a light
+   background and has to stay blue. */
+.tile .tile-btn-fill {
+    background: var(--white);
+    color: #1d1d1f;
+    border-color: var(--white);
+}
+
+.tile .tile-btn-fill:hover {
+    background: rgba(255, 255, 255, 0.85);
+    border-color: rgba(255, 255, 255, 0.85);
+}
+
+/* On sky blue a white pill has only 2.14:1 separation from the tile and floats.
+   Navy gives it 8.12:1 and matches the type on that tile. */
+.tile-sdwan .tile-btn-fill {
+    background: #0d1b2a;
+    color: var(--white);
+    border-color: #0d1b2a;
+}
+
+.tile-sdwan .tile-btn-fill:hover {
+    background: #16293e;
+    border-color: #16293e;
+}
+
+.tile-sdwan .tile-btn-outline {
+    color: #0d1b2a;
+    border-color: rgba(13, 27, 42, 0.45);
+}
+
+.tile-sdwan .tile-btn-outline:hover {
+    background: #0d1b2a;
+    color: var(--white);
+    border-color: #0d1b2a;
+}
+
+/* ============================================
+   BRAND BELT
+   ============================================ */
+.brand-belt {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background: var(--white);
+    border-top: 1px solid var(--grey-200);
+    border-bottom: 1px solid var(--grey-200);
+    padding: calc(1.5rem + var(--sp, 1) * 1rem) 0;
+    margin: calc(1rem + var(--sp, 1) * 2rem) 0;
+}
+
+/* White gradient fades on edges */
+.brand-belt::before,
+.brand-belt::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 120px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.brand-belt::before {
+    left: 0;
+    background: linear-gradient(to right, #ffffff, transparent);
+}
+
+.brand-belt::after {
+    right: 0;
+    background: linear-gradient(to left, #ffffff, transparent);
+}
+
+.brand-track {
+    display: flex;
+    gap: 3.5rem;
+    white-space: nowrap;
+
+    width: max-content;
+}
+
+.brand-name {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--grey-400);
+    letter-spacing: 0.02em;
+    flex-shrink: 0;
+}
+
+/* ============================================
+   CASE STUDIES CAROUSEL
+   ============================================ */
+.cases-section {
+    padding: 4rem 0 3rem;
+}
+
+.cases-heading {
+    font-size: 2.8rem;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    text-align: center;
+    color: #1d1d1f;
+    margin-bottom: 2rem;
+}
+
+/* Viewport,  clips the side cards */
+.cases-viewport {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+/* Track,  positioned via JS transform */
+.cases-track {
+    display: flex;
+    gap: 0.8rem;
+    transition: transform 0.7s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+/* Each card,  matches dual-top-card sizing */
+.case-card {
+    flex-shrink: 0;
+    width: 1200px;
+    height: 600px;
+    border-radius: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.case-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+}
+
+/* Card background image */
+.case-card-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+/* Content overlay at bottom */
+.case-card-content {
+    position: relative;
+    z-index: 2;
+    padding: 2rem 2.5rem;
+    width: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.3) 60%, transparent 100%);
+}
+
+.case-tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.7);
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(6px);
+    padding: 0.3rem 0.8rem;
+    border-radius: 980px;
+    margin-bottom: 0.6rem;
+}
+
+.case-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.4rem;
+}
+
+.case-desc {
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.75);
+    line-height: 1.5;
+    max-width: 440px;
+    margin-bottom: 1rem;
+}
+
+.case-btn {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #ffffff;
+    text-decoration: none;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    padding: 0.5rem 1.2rem;
+    border-radius: 980px;
+    transition: background 0.2s ease;
+}
+
+.case-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* ---- Card gradient backgrounds ---- */
+.case-card-signal {
+    background: linear-gradient(135deg, #1e3a5f 0%, #0e1b2e 100%);
+}
+
+.case-card-routers {
+    background: linear-gradient(135deg, #4a1d6a 0%, #1a0a2e 100%);
+}
+
+.case-card-sdwan {
+    background: linear-gradient(135deg, #0f4c3a 0%, #0a1f17 100%);
+}
+
+.case-card-starlink {
+    background: linear-gradient(135deg, #111111 0%, #000000 100%);
+}
+
+.case-card-iot {
+    background: linear-gradient(135deg, #7c4a1e 0%, #2e1a08 100%);
+}
+
+/* ---- Dynamic Dot Navigation ---- */
+.cases-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1.8rem;
+    padding-bottom: 0.5rem;
+}
+
+.case-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 980px;
+    border: none;
+    background: var(--grey-300);
+    cursor: pointer;
+    padding: 0;
+    transition: all 0.35s ease;
+}
+
+.case-dot:hover {
+    background: var(--grey-500);
+}
+
+.case-dot.active {
+    width: 32px;
+    background: var(--grey-700);
+}
+
+/* ============================================
+   TESTIMONIALS
+   ============================================ */
+.testimonials-section {
+    padding: 5rem 0 4rem;
+}
+
+.testimonials-heading {
+    font-size: 2.8rem;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    text-align: center;
+    color: #1d1d1f;
+    margin-bottom: 3rem;
+}
+
+/* Viewport,  clips overflow, gradient fades on edges */
+.testimonials-viewport {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding: 0.5rem 0;
+}
+
+.testimonials-viewport::before,
+.testimonials-viewport::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 80px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.testimonials-viewport::before {
+    left: 0;
+    background: linear-gradient(to right, #ffffff, transparent);
+}
+
+.testimonials-viewport::after {
+    right: 0;
+    background: linear-gradient(to left, #ffffff, transparent);
+}
+
+/* Track,  positioned by JS */
+.testimonials-track {
+    display: flex;
+    gap: 1.2rem;
+    width: max-content;
+}
+
+/* Glass card */
+.testimonial-card {
+    flex-shrink: 0;
+    width: 420px;
+    padding: 2.2rem 2.4rem;
+    background: rgba(255, 255, 255, 0.45);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-radius: 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.testimonial-label {
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--grey-400);
+}
+
+.testimonial-quote {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: #1d1d1f;
+    line-height: 1.55;
+    flex-grow: 1;
+}
+
+/* Trustpilot 5-star image */
+.testimonial-stars {
+    display: block;
+    width: 115px;
+    height: auto;
+    margin-bottom: 0.3rem;
+}
+
+/* Decorative quote mark */
+.testimonial-mark {
+    font-family: Georgia, serif;
+    font-size: 3.5rem;
+    line-height: 1;
+    color: var(--grey-200);
+    position: absolute;
+    bottom: 3.2rem;
+    right: 1.5rem;
+    pointer-events: none;
+}
+
+/* Author row */
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    margin-top: 0.8rem;
+    padding-top: 0.8rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.testimonial-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--grey-200);
+    flex-shrink: 0;
+}
+
+.testimonial-name {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #1d1d1f;
+}
+
+.testimonial-role {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 400;
+    color: var(--grey-400);
+}
+
+/* Review summary (the Trustpilot review headline) */
+.testimonial-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #1d1d1f;
+    line-height: 1.35;
+    letter-spacing: -0.01em;
+    margin: 0 0 0.6rem;
+}
+
+/* Avatar shows the reviewer's initial */
+.testimonial-avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #1e3a5f;
+    color: #fff;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+/* Trustpilot attribution / verify link under the carousel */
+.testimonials-tp {
+    text-align: center;
+    margin-top: 2.2rem;
+}
+
+.testimonials-tp-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--grey-700);
+    text-decoration: none;
+}
+
+.testimonials-tp-link:hover {
+    color: #1d1d1f;
+    text-decoration: underline;
+}
+
+.testimonials-tp-stars {
+    width: 98px;
+    height: auto;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* ============================================
+   DUAL CAROUSEL,  BLOGS & GUIDES
+   ============================================ */
+.dual-carousel-section {
+    padding: 5rem 0 3rem;
+}
+
+.dual-carousel-heading {
+    font-size: 2.8rem;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    text-align: center;
+    color: #1d1d1f;
+    margin-bottom: 2.5rem;
+}
+
+/* Shared viewport style */
+.dual-top-viewport,
+.dual-bottom-viewport {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.dual-top-viewport {
+    margin-bottom: 0.8rem;
+}
+
+/* Shared track style,  JS controls transform */
+.dual-top-track,
+.dual-bottom-track {
+    display: flex;
+    gap: 0.8rem;
+    transition: transform 0.7s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+/* Top cards,  large (2x) */
+.dual-top-card {
+    flex-shrink: 0;
+    width: 1200px;
+    height: 600px;
+    border-radius: 0;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 2.5rem;
+}
+
+.dual-top-card.linkedin-dynamic {
+    justify-content: flex-start;
+    padding: 2.5rem;
+}
+
+/* Bottom cards,  small (1x) */
+.dual-bottom-card {
+    flex-shrink: 0;
+    width: 600px;
+    height: 300px;
+    border-radius: 0;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 1.4rem 1.6rem;
+}
+
+/* Card tag */
+.dual-card-tag {
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: auto;
+}
+
+.dual-card-tag.dark {
+    color: var(--grey-400);
+}
+
+/* Card title */
+.dual-card-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.5rem;
+}
+
+.dual-card-title.dark {
+    color: #1d1d1f;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+/* Card description,  top cards only */
+.dual-card-desc {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.45;
+    margin-bottom: 1rem;
+}
+
+/* Card CTA button */
+.dual-card-btn {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 0.45rem 1rem;
+    border-radius: 6px;
+    text-decoration: none;
+    width: fit-content;
+    transition: background 0.2s;
+}
+
+.dual-card-btn:hover {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.dual-card-btn.dark {
+    color: #1d1d1f;
+    background: rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.dual-card-btn.dark:hover {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.dual-bottom-card .dual-card-title {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+/* LinkedIn embed panel,  fills the top card */
+.li-embed-panel {
+    flex: 1;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    min-height: 0;
+}
+
+.li-embed-panel iframe {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border: none;
+}
+
+/* Dot navigation */
+.dual-dots {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 1.8rem;
+}
+
+.dual-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 100px;
+    border: none;
+    background: var(--grey-200);
+    cursor: pointer;
+    padding: 0;
+    transition: width 0.3s, background 0.3s;
+}
+
+.dual-dot.active {
+    width: 32px;
+    background: var(--grey-700);
+}
+
+/* ============================================
+   SPEAK TO A SPECIALIST  (reusable contact CTA)
+   Dark band with the teal Anvil-dots accent, sits
+   above "Stay Connected". Drop <section class="specialist-cta">
+   on any page; self-contained + mobile-first.
+   ============================================ */
+.specialist-cta {
+    padding: 2rem 2rem 6rem;
+    background: var(--white);
+}
+
+.specialist-cta-inner {
+    position: relative;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: clamp(2.5rem, 5vw, 4.5rem) clamp(1.5rem, 5vw, 4.5rem);
+    border-radius: 28px;
+    overflow: hidden;
+    isolation: isolate;
+    background:
+        radial-gradient(120% 140% at 100% 0%, #1b2942 0%, rgba(27, 41, 66, 0) 55%),
+        linear-gradient(135deg, #0f1526 0%, #131b2e 55%, #0d1220 100%);
+    box-shadow: 0 30px 60px -30px rgba(15, 21, 38, 0.55);
+}
+
+/* thin teal accent line along the top edge */
+.specialist-cta-inner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, #71b2c9, rgba(113, 178, 201, 0));
+}
+
+.specialist-cta-dots {
+    position: absolute;
+    right: -12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: clamp(220px, 34%, 420px);
+    height: auto;
+    opacity: 0.55;
+    pointer-events: none;
+    z-index: -1;
+    user-select: none;
+}
+
+.specialist-cta-content {
+    position: relative;
+    max-width: 620px;
+}
+
+.specialist-cta-eyebrow {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #8ecadd;
+    margin-bottom: 1.1rem;
+}
+
+.specialist-cta-heading {
+    margin: 0 0 1rem;
+    font-size: clamp(1.9rem, 3.2vw, 2.7rem);
+    font-weight: 700;
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+    color: var(--white);
+}
+
+.specialist-cta-text {
+    margin: 0 0 2rem;
+    font-size: clamp(0.95rem, 1.1vw, 1.05rem);
+    font-weight: 300;
+    line-height: 1.65;
+    color: #c3ccdb;
+}
+
+.specialist-cta-actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem 1.75rem;
+    margin-bottom: 2rem;
+}
+
+.specialist-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.9rem 1.8rem;
+    border-radius: 980px;
+    background: #71b2c9;
+    color: #0f1526;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 12px 24px -12px rgba(113, 178, 201, 0.7);
+    transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.specialist-cta-btn:hover {
+    background: #8ecadd;
+    transform: translateY(-2px);
+    box-shadow: 0 16px 30px -12px rgba(113, 178, 201, 0.8);
+}
+
+.specialist-cta-btn-icon {
+    width: 18px;
+    height: 18px;
+}
+
+.specialist-cta-email {
+    color: #c3ccdb;
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.specialist-cta-email:hover {
+    color: var(--white);
+}
+
+.specialist-cta-details {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.9rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.9rem;
+    color: #9aa6b8;
+}
+
+.specialist-cta-phone {
+    color: var(--white);
+    font-weight: 600;
+    text-decoration: none;
+    letter-spacing: 0.01em;
+    transition: color 0.2s ease;
+}
+
+.specialist-cta-phone:hover {
+    color: #8ecadd;
+}
+
+.specialist-cta-sep {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #71b2c9;
+}
+
+@media (max-width: 768px) {
+    .specialist-cta {
+        padding: 1rem 1rem 4rem;
+    }
+
+    .specialist-cta-inner {
+        padding: 2.5rem 1.5rem;
+        border-radius: 22px;
+    }
+
+    .specialist-cta-dots {
+        top: auto;
+        transform: none;
+        right: -50px;
+        bottom: -8px;
+        width: 200px;
+        opacity: 0.35;
+    }
+
+    .specialist-cta-actions {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1rem;
+    }
+
+    .specialist-cta-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .specialist-cta-email {
+        text-align: center;
+    }
+
+    .specialist-cta-details {
+        justify-content: center;
+        text-align: center;
+    }
+}
+
+/* ============================================
+   STAY CONNECTED
+   ============================================ */
+.stay-connected {
+    position: relative;
+    padding: 6rem 2rem;
+    text-align: center;
+    background: linear-gradient(135deg, #e8f0fe, #f0f4ff, #dce8fc, #f5f8ff, #e4edfd);
+    background-size: 400% 400%;
+    animation: stayGradient 12s ease infinite;
+    overflow: hidden;
+}
+
+@keyframes stayGradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.stay-connected-inner {
+    max-width: 560px;
+    margin: 0 auto;
+}
+
+.stay-heading {
+    font-size: 2.8rem;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    color: #1d1d1f;
+    margin-bottom: 0.8rem;
+}
+
+.stay-subtext {
+    font-size: 1rem;
+    color: var(--grey-500);
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.stay-form {
+    display: flex;
+    gap: 0;
+    max-width: 480px;
+    margin: 0 auto;
+    border-radius: 0;
+    overflow: hidden;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.stay-input {
+    flex: 1;
+    padding: 0.9rem 1.2rem;
+    font-size: 0.9rem;
+    font-family: 'Inter', sans-serif;
+    border: none;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: #1d1d1f;
+    outline: none;
+}
+
+.stay-input::placeholder {
+    color: var(--grey-400);
+}
+
+.stay-btn {
+    padding: 0.9rem 1.6rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    border: none;
+    background: #1d1d1f;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.2s;
+    white-space: nowrap;
+}
+
+.stay-btn:hover {
+    background: #333;
+}
+
+.stay-disclaimer {
+    font-size: 0.7rem;
+    color: var(--grey-400);
+    margin-top: 1rem;
+}
+
+/* Result of a "Stay Connected" signup — created by assets/subscribe.js. Empty until
+   there is something to say, so it takes no space on a page nobody has interacted with. */
+.stay-status {
+    font-size: 0.82rem;
+    font-weight: 500;
+    margin-top: 0.85rem;
+    min-height: 1.2em;
+}
+.stay-status[data-state="ok"] { color: #34d399; }
+.stay-status[data-state="error"] { color: #fca5a5; }
+.stay-status:empty { margin-top: 0; min-height: 0; }
+
+.stay-btn:disabled { opacity: 0.65; cursor: default; }
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.site-footer {
+    background: #1d1d1f;
+    color: #a1a1a6;
+    padding: 4rem 0 2rem;
+}
+
+.footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.footer-top {
+    display: flex;
+    gap: 4rem;
+    margin-bottom: 3rem;
+}
+
+.footer-brand {
+    flex-shrink: 0;
+    max-width: 200px;
+}
+
+.footer-logo {
+    height: 28px;
+    opacity: 0.8;
+    margin-bottom: 0.8rem;
+    filter: brightness(0) invert(1);
+}
+
+.footer-tagline {
+    font-size: 0.75rem;
+    color: #86868b;
+    line-height: 1.5;
+}
+
+.footer-columns {
+    display: flex;
+    gap: 3rem;
+    flex: 1;
+}
+
+.footer-col {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex: 1;
+}
+
+.footer-col h4 {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #f5f5f7;
+    margin-bottom: 0.4rem;
+}
+
+.footer-col a {
+    font-size: 0.78rem;
+    color: #a1a1a6;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.footer-col a:hover {
+    color: #f5f5f7;
+}
+
+/* Bottom bar */
+.footer-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 2rem;
+    border-top: 1px solid #333;
+    font-size: 0.7rem;
+}
+
+.footer-copy {
+    color: #6e6e73;
+}
+
+.footer-legal {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.footer-legal a {
+    color: #6e6e73;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.footer-legal a:hover {
+    color: #a1a1a6;
+}
+
+.footer-social {
+    display: flex;
+    gap: 1.2rem;
+}
+
+.footer-social a {
+    color: #6e6e73;
+    text-decoration: none;
+    font-size: 0.75rem;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.footer-social a:hover {
+    color: #f5f5f7;
+}
+
+
+
+
+/* ============================================
+   SD-WAN PAGE,  EDITORIAL DESIGN SYSTEM
+   ============================================ */
+
+/* ---- Page Wrapper ---- */
+.sdw-page {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* ---- Section Spacing ---- */
+.sdw-section {
+    padding: 48px 0;
+}
+
+/* ---- Typography ---- */
+.sdw-heading {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(1.8rem, 3vw, 2.4rem);
+    font-weight: 700;
+    color: #000000;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    margin-bottom: 1rem;
+}
+
+.sdw-heading-hero {
+    font-size: clamp(2.6rem, 4.5vw, 3.6rem);
+    letter-spacing: -0.03em;
+    margin-bottom: 2rem;
+}
+
+.sdw-body {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 400;
+    color: #000000;
+    line-height: 1.8;
+    max-width: 680px;
+}
+
+.sdw-body strong {
+    font-weight: 600;
+}
+
+/* ============================================
+   SECTION 1,  HERO STATEMENT
+   ============================================ */
+.sdw-hero-statement {
+    text-align: left;
+    padding: 120px 0 150px;
+}
+
+.sdw-hero-statement .sdw-body {
+    max-width: 700px;
+}
+
+/* ============================================
+   SECTION 2,  MULTI-COLUMN LEDGER
+   ============================================ */
+.sdw-ledger {
+    padding: 150px 0;
+}
+
+.sdw-ledger-line {
+    width: 100%;
+    height: 1px;
+    background: #000000;
+    margin-bottom: 3rem;
+}
+
+.sdw-ledger-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3rem;
+}
+
+
+
+.sdw-ledger-index {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #000000;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.sdw-ledger-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 400;
+    color: #000000;
+    line-height: 1.7;
+}
+
+.sdw-ledger-text strong {
+    font-weight: 600;
+}
+
+/* ============================================
+   SECTION 3,  SPECIFICATION INSET (60/40 split)
+   ============================================ */
+.sdw-spec-inset {
+    padding: 150px 0;
+}
+
+.sdw-spec-split {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 0;
+    align-items: start;
+}
+
+.sdw-spec-left {
+    padding-right: 4rem;
+}
+
+.sdw-spec-right {
+    border-left: 1px solid #000000;
+    padding-left: 4rem;
+}
+
+.sdw-spec-list-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #000000;
+    margin-bottom: 1.5rem;
+}
+
+.sdw-spec-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sdw-spec-list li {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.82rem;
+    font-weight: 400;
+    color: #000000;
+    padding: 0.7rem 0;
+    border-bottom: 1px solid #e5e5e5;
+    letter-spacing: 0.01em;
+}
+
+.sdw-spec-list li:first-child {
+    border-top: 1px solid #e5e5e5;
+}
+
+/* ============================================
+   SECTION 4,  FULL-WIDTH FOOTER BLOCK
+   ============================================ */
+.sdw-footer-block {
+    background: #f5f5f7;
+    padding: 80px 0;
+}
+
+.sdw-footer-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.sdw-footer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 3rem;
+    margin-top: 3rem;
+}
+
+.sdw-footer-col-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #000000;
+    margin-bottom: 1rem;
+}
+
+.sdw-footer-col-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 400;
+    color: #000000;
+    line-height: 1.7;
+}
+
+.sdw-footer-col-text strong {
+    font-weight: 600;
+}
+
+.sdw-link {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: #2563eb;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 1rem;
+    letter-spacing: 0.01em;
+}
+
+.sdw-link:hover {
+    text-decoration: underline;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 900px) {
+
+    .sdw-section,
+    .sdw-ledger,
+    .sdw-spec-inset {
+        padding: 40px 0;
+    }
+
+    .sdw-footer-block {
+        padding: 60px 0;
+    }
+
+    .sdw-ledger-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+
+    .sdw-spec-split {
+        grid-template-columns: 1fr;
+    }
+
+    .sdw-spec-left {
+        padding-right: 0;
+        margin-bottom: 3rem;
+    }
+
+    .sdw-spec-right {
+        border-left: none;
+        border-top: 1px solid #000000;
+        padding-left: 0;
+        padding-top: 2rem;
+    }
+
+    .sdw-footer-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    .sdw-heading-hero {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .sdw-ledger-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* ============================================
+   SECTION 5,  ASYMMETRIC STATEMENT (40/60 split)
+   ============================================ */
+.sdw-asymmetric {
+    padding: 180px 0 80px;
+    position: relative;
+}
+
+.sdw-asymmetric-grid {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    gap: 0;
+    align-items: start;
+}
+
+/* Vertical divider line,  full height of section */
+.sdw-asymmetric::after {
+    content: '';
+    position: absolute;
+    left: calc(40% - 1px);
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: #000000;
+}
+
+.sdw-asymmetric-headline {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(2.8rem, 5vw, 4.2rem);
+    font-weight: 800;
+    color: #000000;
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+    padding-right: 3rem;
+}
+
+.sdw-asymmetric-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    padding-left: 4rem;
+}
+
+.sdw-sub-index {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #000000;
+    margin-bottom: 0.8rem;
+    display: block;
+}
+
+.sdw-sub-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 400;
+    color: #000000;
+    line-height: 1.7;
+}
+
+.sdw-sub-text strong {
+    font-weight: 600;
+}
+
+/* ============================================
+   SECTION 6,  COMPARATIVE LEDGER (table)
+   ============================================ */
+.sdw-comparative {
+    padding: 150px 0;
+}
+
+.sdw-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 2.5rem;
+}
+
+.sdw-table th,
+.sdw-table td {
+    border: 1px solid #000000;
+    padding: 1.2rem 1.5rem;
+    text-align: left;
+    vertical-align: top;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 400;
+    color: #000000;
+    line-height: 1.6;
+}
+
+.sdw-table th {
+    font-weight: 600;
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+/* Monospace for the managed column */
+.sdw-table td:nth-child(3) {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+}
+
+/* ============================================
+   SECTION 7,  HIGH-CONTRAST DATA STRIP
+   ============================================ */
+.sdw-data-strip {
+    background: #f5f5f7;
+    padding: 60px 0;
+}
+
+.sdw-data-strip-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    text-align: center;
+}
+
+.sdw-stat-value {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 700;
+    color: #000000;
+    letter-spacing: -0.03em;
+    line-height: 1;
+    display: block;
+}
+
+.sdw-stat-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #6b7280;
+    margin-top: 0.6rem;
+    display: block;
+}
+
+/* ============================================
+   SECTION 8,  STAGGERED STACK
+   ============================================ */
+.sdw-stagger {
+    padding: 180px 0 100px;
+}
+
+.sdw-stagger-block {
+    margin-bottom: 3rem;
+    position: relative;
+    max-width: 700px;
+}
+
+.sdw-stagger-block:nth-child(1) {
+    margin-left: 0;
+}
+
+.sdw-stagger-block:nth-child(2) {
+    margin-left: 40px;
+}
+
+.sdw-stagger-block:nth-child(3) {
+    margin-left: 80px;
+}
+
+/* 1px bracket accent */
+.sdw-stagger-block::before {
+    content: '[';
+    position: absolute;
+    left: -1.5rem;
+    top: 0;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 300;
+    color: #000000;
+    line-height: 1;
+}
+
+.sdw-stagger-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #000000;
+    margin-bottom: 0.6rem;
+    letter-spacing: -0.01em;
+}
+
+.sdw-stagger-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 400;
+    color: #000000;
+    line-height: 1.7;
+}
+
+.sdw-stagger-text strong {
+    font-weight: 600;
+}
+
+/* ============================================
+   SECTION 9,  MINIMALIST CTA
+   ============================================ */
+.sdw-cta {
+    padding: 0 0 150px;
+    position: relative;
+}
+
+.sdw-cta-line {
+    width: 100%;
+    height: 1px;
+    background: #000000;
+}
+
+.sdw-cta-content {
+    text-align: center;
+    padding-top: 100px;
+}
+
+.sdw-cta-question {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #6b7280;
+    letter-spacing: 0.02em;
+    margin-bottom: 1.5rem;
+}
+
+.sdw-cta-link {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+    font-weight: 600;
+    color: #000000;
+    text-decoration: none;
+    letter-spacing: -0.02em;
+    display: inline-block;
+    border-bottom: 1px solid #000000;
+    padding-bottom: 0.3rem;
+    transition: opacity 0.2s ease;
+}
+
+.sdw-cta-link:hover {
+    opacity: 0.6;
+}
+
+/* ---- Additional responsive for sections 5-9 ---- */
+@media (max-width: 900px) {
+    .sdw-asymmetric-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .sdw-asymmetric-headline {
+        padding-right: 0;
+        margin-bottom: 2rem;
+    }
+
+    .sdw-asymmetric-cols {
+        grid-template-columns: 1fr;
+        padding-left: 0;
+    }
+
+    .sdw-asymmetric::after {
+        display: none;
+    }
+
+    .sdw-data-strip-inner {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .sdw-stagger-block:nth-child(2),
+    .sdw-stagger-block:nth-child(3) {
+        margin-left: 0;
+    }
+
+    .sdw-table {
+        font-size: 0.78rem;
+    }
+
+    .sdw-table th,
+    .sdw-table td {
+        padding: 0.8rem 1rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .sdw-data-strip-inner {
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+    }
+}
+
+
+/* ============================================
+   STARLINK PRODUCT CATALOG
+   ============================================ */
+.sl-catalog {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 80px 2rem 100px;
+}
+
+.sl-catalog-heading {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #000000;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.5rem;
+}
+
+.sl-catalog-subheading {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: #6b7280;
+    margin-bottom: 2.5rem;
+}
+
+.sl-catalog-category {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #000000;
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 1px solid #000000;
+}
+
+.sl-catalog-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: #e5e5e5;
+}
+
+.sl-catalog-item {
+    background: #ffffff;
+    padding: 1.5rem 1.8rem;
+    display: grid;
+    grid-template-columns: 80px 1fr auto;
+    gap: 1.2rem;
+    align-items: center;
+}
+
+.sl-catalog-item-img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    border-radius: 0;
+}
+
+.sl-catalog-item-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+}
+
+.sl-catalog-item-name {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: #000000;
+}
+
+.sl-catalog-item-spec {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 400;
+    color: #6b7280;
+}
+
+.sl-catalog-item-id {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.62rem;
+    font-weight: 400;
+    color: #9ca3af;
+    letter-spacing: 0.03em;
+}
+
+.sl-catalog-purchase {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 500;
+    color: #2563eb;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.sl-catalog-purchase:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .sl-catalog-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .sl-catalog-item {
+        grid-template-columns: 60px 1fr auto;
+    }
+
+    .sl-catalog-item-img {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+
+/* ============================================
+   HARDWARE PAGE,  OP-XY EDITORIAL LAYOUT
+   ============================================ */
+
+
+
+.hw-hero {
+    padding-top: 6rem;
+}
+
+/* Placeholder grey boxes */
+.hw-grey-box {
+    width: 80%;
+    max-width: 700px;
+    background: #888888;
+    border-radius: 0;
+    margin: 0 auto;
+    object-fit: cover;
+    display: block;
+}
+
+.hw-grey-box-hero {
+    height: 240px;
+}
+
+.hw-grey-box-sm {
+    width: 90%;
+    max-width: 500px;
+    height: 140px;
+}
+
+.hw-grey-box-wide {
+    width: 95%;
+    max-width: 900px;
+    height: 180px;
+}
+
+.hw-hero-title {
+    font-size: clamp(5rem, 14vw, 12rem);
+    font-weight: 900;
+    color: var(--grey-900);
+    letter-spacing: -0.04em;
+    line-height: 0.9;
+    margin: 0;
+    padding: 1rem 0 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+}
+
+.hw-title-dash {
+    display: inline-block;
+    font-weight: 200;
+    letter-spacing: -0.15em;
+    color: var(--grey-900);
+    flex-shrink: 0;
+}
+
+/* ---- SECTION 3: Image + Text Split ---- */
+.hw-split {
+    padding: 4rem 2rem 6rem;
+}
+
+.hw-split-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.hw-split-image {
+    display: flex;
+    justify-content: center;
+}
+
+
+
+.hw-split-text {
+    font-size: 1.1rem;
+    font-weight: 300;
+    color: var(--grey-700);
+    line-height: 1.6;
+}
+
+.hw-split-text p {
+    margin-bottom: 1.2rem;
+}
+
+.hw-split-text p:last-child {
+    margin-bottom: 0;
+}
+
+/* ---- SECTION 4: Full-width window image ---- */
+.hw-full-window {
+    padding: 0 2rem 6rem;
+}
+
+.hw-full-window-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ---- SECTION 5/7/9: Marquee Strips ---- */
+.hw-marquee {
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 2rem 0;
+    border-top: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+    background: #ffffff;
+}
+
+.hw-marquee-dark {
+    background: #fafafa;
+}
+
+.hw-marquee-bottom {
+    background: #f5f5f5;
+}
+
+.hw-marquee-track {
+    display: inline-flex;
+    align-items: center;
+    gap: 2.5rem;
+    will-change: transform;
+}
+
+.hw-marquee-item {
+    font-size: clamp(1.8rem, 4vw, 3.2rem);
+    font-weight: 500;
+    color: var(--grey-900);
+    letter-spacing: -0.02em;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.hw-marquee-icon {
+    font-size: 1.6rem;
+    color: var(--grey-900);
+    opacity: 0.5;
+    flex-shrink: 0;
+}
+
+@keyframes hwMarqueeScroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(calc(-1 * var(--marquee-width)));
+    }
+}
+
+/* ---- SECTION 6: The Science Bit Text ---- */
+.hw-science-wrapper {
+    position: relative;
+    background: #ffffff;
+    overflow: hidden;
+}
+
+.dither-text-mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    pointer-events: none;
+    background: linear-gradient(
+        to right,
+        transparent 0%,
+        #ffffff 40%,
+        #ffffff 60%,
+        transparent 100%
+    );
+}
+
+#dither-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+#dither-container canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.hw-science-text {
+    position: relative;
+    z-index: 10;
+    padding: 10rem 2rem;
+    pointer-events: none; /* Let mouse glide through to canvas */
+}
+
+.hw-science-text-inner {
+    max-width: 860px;
+    margin: 0 auto;
+}
+
+.hw-science-text-block {
+    margin-bottom: 8rem;
+}
+
+.hw-science-text-block:last-child {
+    margin-bottom: 0;
+}
+
+.hw-science-main {
+    font-size: 2.2rem;
+    font-weight: 500;
+    color: var(--grey-900);
+    line-height: 1.35;
+    letter-spacing: -0.02em;
+    margin: 0 0 4rem;
+}
+
+.hw-science-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+}
+
+.hw-science-label {
+    font-size: 1.15rem;
+    font-weight: 400;
+    color: var(--grey-400);
+    margin: 0 0 1.2rem;
+}
+
+.hw-science-body {
+    font-size: 1.1rem;
+    font-weight: 300;
+    color: var(--grey-700);
+    line-height: 1.6;
+}
+
+/* ---- SECTION 8: Three-Column Feature Grid ---- */
+.hw-features {
+    padding: 6rem 2rem;
+    background: #ffffff;
+}
+
+.hw-features-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+}
+
+.hw-feature-card {
+    padding: 2rem 0;
+    border-top: 1px solid #e5e5e5;
+}
+
+.hw-feature-text {
+    font-size: 1.1rem;
+    font-weight: 300;
+    color: var(--grey-700);
+    line-height: 1.6;
+}
+
+
+
+/* ---- Hardware Page Responsive ---- */
+@media (max-width: 900px) {
+    .hw-hero-title {
+        font-size: clamp(3rem, 10vw, 6rem);
+    }
+
+    .hw-split-inner {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .hw-features-inner {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .hw-science-main {
+        font-size: 1.8rem;
+    }
+
+    .hw-science-cols {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .hw-science-text-block {
+        margin-bottom: 5rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .hw-marquee-item {
+        font-size: 1.4rem;
+    }
+
+    .hw-science-text {
+        padding: 5rem 1.5rem;
+    }
+
+    .hw-science-main {
+        font-size: 1.6rem;
+    }
+}
+
+
+/* Hamburger button,  hidden on desktop, shown via mobile media query */
+.mobile-menu-btn {
+    display: none;
+}
+
+/* ============================================================
+   MOBILE PORTRAIT LAYOUT  (max-width: 768px physical pixels)
+   Resets zoom so mobile scales to 390px design width instead.
+   All card/carousel widths are redefined to fit 390px canvas.
+   ============================================================ */
+@media (max-width: 768px) {
+
+    /* Allow standard responsive scaling instead of hardcoded zoom */
+    html {
+        /* zoom removed to prevent horizontal margin bugs on mobile */
+    }
+
+    body {
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    /* ================================================
+       HEADER
+       ================================================ */
+    .site-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+    }
+
+    .header-bar {
+        height: 54px;
+        padding: 0 1.2rem;
+        justify-content: space-between;
+        gap: 0;
+        max-width: 100%;
+    }
+
+    /* Logo stays top-left, so the contact flows into the row (logo | icon +
+       label + number | hamburger) instead of overlapping the logo. */
+    .header-phone {
+        position: static;
+        left: auto;
+        height: 54px;
+        gap: 0.4rem;
+    }
+
+    .header-phone-icon {
+        width: 16px;
+        height: 16px;
+    }
+
+    .header-phone-label {
+        font-size: 0.55rem;
+    }
+
+    .header-phone-number {
+        font-size: 0.82rem;
+    }
+
+    /* Keep logo fully visible regardless of scroll position */
+    .header-logo.scroll-fade {
+        width: 110px;
+    }
+
+    .header-logo.scroll-fade img {
+        opacity: 1 !important;
+    }
+
+    /* Desktop nav collapsed, shown as overlay when .mobile-open */
+    .header-nav {
+        display: none;
+        position: fixed;
+        top: 54px;
+        left: 0;
+        right: 0;
+        bottom: auto;
+        height: auto; /* Hug content by default */
+        min-height: 100px;
+        max-height: 85vh;
+        background: rgba(255, 255, 255, 1); /* Fully opaque */
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        overflow: hidden; /* For horizontal slide */
+        z-index: 999;
+        border-bottom: 1px solid var(--grey-200);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        border-radius: 0; /* Sharp corners */
+        transition: height 0.3s ease;
+    }
+
+    .header-nav.mobile-open {
+        display: block;
+    }
+
+    /* When a submenu is active, lock nav to full available height so the
+       submenu's height:100% resolves correctly without JS measurement. */
+    .header-nav.has-active-submenu {
+        height: 85vh;
+    }
+
+    .nav-list {
+        position: relative; /* Acts as containing block for absolute submenus */
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        align-items: stretch;
+        padding: 0; /* Remove padding here so border box matches viewport width exactly */
+        height: 100%; /* Crucial: expands to fill .header-nav when JS sets explicit height */
+        width: 100%;
+        box-sizing: border-box;
+        overflow-y: auto;
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* No transform on the list: a transformed ancestor traps the absolutely
+       positioned submenu in its stacking context and shifts it off-screen.
+       The active submenu instead overlays the list (see rule below). */
+    .header-nav.has-active-submenu .nav-list {
+        overflow: hidden;
+    }
+
+    .nav-item {
+        margin: 0 1.4rem; /* Move horizontal spacing here to constrain borders */
+        border-bottom: 1px solid var(--grey-100);
+        box-sizing: border-box;
+        /* static (not desktop's relative) so the active submenu positions against
+           the full-height .nav-list, not the 44px menu row. */
+        position: static;
+    }
+    
+    .nav-item:first-child {
+        margin-top: 1.5rem; /* Top spacing */
+    }
+
+    .nav-item:last-child {
+        margin-bottom: 2rem; /* Bottom spacing */
+        border-bottom: none;
+    }
+
+    .nav-link {
+        line-height: 1;
+        padding: 0.9rem 0;
+        font-size: 0.95rem;
+        font-weight: 500;
+        color: var(--grey-900);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    /* Add an arrow to dropdown links */
+    .nav-item.has-dropdown .nav-link::after {
+        content: '›';
+        font-size: 1.4rem;
+        color: var(--grey-400);
+        line-height: 0;
+        margin-top: -2px;
+    }
+
+    /* Submenus: fully reset desktop properties on mobile */
+    .dropdown-expand {
+        display: none !important;
+        position: static !important;
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        pointer-events: auto !important;
+        padding: 0 !important;
+        border: none !important;
+        border-bottom: none !important;
+        transition: none !important;
+    }
+
+    /* Active submenu: position to the right of nav-list */
+    .nav-item.mobile-active .dropdown-expand {
+        display: block !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        pointer-events: auto !important;
+        /* Overlay the submenu directly over the nav-list. !important is needed to
+           beat the base .dropdown-expand position/top/left !important resets. */
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        width: auto;
+        height: auto;
+        background: var(--white);
+        z-index: 10;
+        /* !important: base .dropdown-expand sets padding:0 !important, which was
+           pinning all content to the left edge and flattening the header. */
+        padding: 1.5rem 1.4rem 2rem !important;
+        border: none;
+        border-bottom: none;
+        overflow-y: auto;
+        box-sizing: border-box;
+    }
+
+    .nav-item .dropdown-inner {
+        padding: 0;
+        flex-direction: column;
+        gap: 0; /* back-button's margin-bottom is the only separator needed on mobile */
+    }
+
+    .nav-item .dropdown-left {
+        display: none;
+    }
+
+    /* Groups stack vertically; links within each group flow in a 2-wide grid
+       so the menu stays compact and needs little/no scrolling. */
+    .nav-item .dropdown-links {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .nav-item .dropdown-col {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 1.25rem;
+        row-gap: 0;
+        align-items: start;
+        /* auto rows (NOT a min-height) so the label row hugs its text instead of
+           trapping ~18px of dead space below it. Even rhythm comes from the
+           symmetric padding on items + matching label margin below. */
+        grid-auto-rows: auto;
+    }
+
+    .nav-item .dropdown-col a {
+        display: block;
+        min-width: 0; /* allow grid cells to share width equally */
+        padding: 0.5rem 0; /* symmetric → item-to-item gap is a consistent ~16px */
+        font-size: 0.85rem;
+        font-weight: 400;
+        line-height: 1.3;
+        color: var(--grey-700);
+        border-bottom: none; /* no divider lines between items */
+        /* Override desktop's white-space:nowrap — without this, long labels
+           don't wrap and overflow into the adjacent column (visual overlap). */
+        white-space: normal;
+        overflow-wrap: break-word;
+    }
+
+    .nav-item .dropdown-label {
+        grid-column: 1 / -1; /* label spans full width above its 2-column links */
+        display: block;
+        font-size: 0.72rem;
+        font-weight: 700;
+        color: var(--grey-900); /* solid dark, not grey */
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        /* 0.5rem below matches the items' 0.5rem top padding, so the
+           label→first-item gap equals the item→item gap on every group. */
+        margin: 0 0 0.5rem;
+    }
+
+    /* Group separation: clearly larger than the item rhythm, but not cavernous. */
+    .nav-item .dropdown-col + .dropdown-col .dropdown-label {
+        margin-top: 0.75rem;
+    }
+
+    .mobile-back-btn {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        text-align: left;
+        background: none;
+        border: none;
+        padding: 0 0 0.75rem 0;
+        font-family: var(--font);
+        font-size: 0.95rem;
+        font-weight: 500;
+        color: var(--grey-900);
+        border-bottom: 1px solid var(--grey-100);
+        margin-bottom: 0.85rem;
+        cursor: pointer;
+    }
+    .mobile-back-btn::before {
+        content: '‹';
+        font-size: 1.6rem;
+        margin-right: 0.5rem;
+        line-height: 0;
+        margin-top: -2px;
+        color: var(--grey-400);
+    }
+
+    /* ---- Hamburger button ---- */
+    .mobile-menu-btn {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        width: 40px;
+        height: 40px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        flex-shrink: 0;
+    }
+
+    .mobile-menu-btn span {
+        display: block;
+        width: 22px;
+        height: 2px;
+        background: var(--grey-900);
+        border-radius: 2px;
+        transition: transform 0.25s ease, opacity 0.25s ease;
+    }
+
+    .mobile-menu-btn[aria-expanded="true"] span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+
+    .mobile-menu-btn[aria-expanded="true"] span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .mobile-menu-btn[aria-expanded="true"] span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+    }
+
+    /* ================================================
+       MAIN CONTENT OFFSET
+       ================================================ */
+    main {
+        padding-top: 54px;
+    }
+
+    /* ================================================
+       HERO
+       ================================================ */
+    .hero {
+        padding: 2.5rem 1.4rem 2rem;
+        text-align: center;
+    }
+
+    .hero-logo {
+        height: auto;
+        max-height: 80px;
+        opacity: 1 !important;
+        margin-bottom: 1.2rem;
+    }
+
+    .hero-headline {
+        font-size: 2rem;
+        line-height: 1.25;
+    }
+
+    .word-rotator {
+        height: 1.25em;
+    }
+
+    .hero-sub {
+        font-size: 0.95rem;
+        margin-top: 1rem;
+    }
+
+    /* ================================================
+       CORE TILES,  2x2 grid
+       ================================================ */
+    .tiles-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 6px;
+    }
+
+    .tile {
+        aspect-ratio: 1 / 1;
+        min-height: unset;
+        padding: 1rem 0.8rem 0.8rem;
+    }
+
+    .tile-title {
+        font-size: 0.85rem;
+        letter-spacing: -0.02em;
+    }
+
+    .tile-sub {
+        font-size: 0.6rem;
+    }
+
+    .tile-ctas {
+        gap: 0.3rem;
+        margin-top: 0.4rem;
+    }
+
+    .tile-btn {
+        padding: 0.55rem 0.9rem;
+        font-size: 0.7rem;
+        min-height: 36px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .tile-visual img {
+        max-height: 70px;
+    }
+
+    /* ================================================
+       BRAND BELT
+       ================================================ */
+    .brand-belt {
+        padding: 1.2rem 0;
+        margin: 1.5rem 0;
+    }
+
+    .brand-name {
+        font-size: 1.1rem;
+    }
+
+    /* ================================================
+       CASE STUDIES CAROUSEL
+       ================================================ */
+    .cases-section {
+        padding: 2.5rem 0 2rem;
+    }
+
+    .cases-heading {
+        font-size: 1.8rem;
+        margin-bottom: 1.2rem;
+        padding: 0 1.4rem;
+    }
+
+    .case-card {
+        width: min(358px, calc(100vw - 32px));
+        height: 340px;
+    }
+
+    .cases-track {
+        gap: 0.6rem;
+    }
+
+    .case-title {
+        font-size: 1.1rem;
+    }
+
+    .case-desc {
+        font-size: 0.8rem;
+        max-width: none;
+    }
+
+    .case-card-content {
+        padding: 1.2rem 1.4rem;
+    }
+
+    /* ================================================
+       TESTIMONIALS
+       ================================================ */
+    .testimonials-section {
+        padding: 2.5rem 0 2rem;
+    }
+
+    .testimonials-heading {
+        font-size: 1.8rem;
+        margin-bottom: 1.8rem;
+        padding: 0 1.4rem;
+    }
+
+    .testimonial-card {
+        width: min(320px, calc(100vw - 32px));
+        padding: 1.6rem;
+    }
+
+    .testimonial-title {
+        font-size: 0.95rem;
+    }
+
+    .testimonial-quote {
+        font-size: 0.9rem;
+    }
+
+    /* ================================================
+       DUAL CAROUSEL
+       ================================================ */
+    .dual-carousel-section {
+        padding: 2.5rem 0 2rem;
+    }
+
+    .dual-carousel-heading {
+        font-size: 1.8rem;
+        margin-bottom: 1.4rem;
+        padding: 0 1.4rem;
+    }
+
+    .dual-top-card {
+        width: min(358px, calc(100vw - 32px));
+        height: 360px;
+        padding: 1.6rem;
+    }
+
+    .dual-card-title {
+        font-size: 1.1rem;
+    }
+
+    .dual-card-desc {
+        font-size: 0.82rem;
+    }
+
+    .dual-bottom-card {
+        width: min(358px, calc(100vw - 32px));
+        height: 220px;
+        padding: 1.2rem 1.4rem;
+    }
+
+    .dual-bottom-card .dual-card-title {
+        font-size: 0.9rem;
+    }
+
+    /* ================================================
+       STAY CONNECTED
+       ================================================ */
+    .stay-connected {
+        padding: 3.5rem 1.4rem;
+    }
+
+    .stay-heading {
+        font-size: 1.8rem;
+    }
+
+    .stay-subtext {
+        font-size: 0.88rem;
+    }
+
+    .stay-form {
+        flex-direction: column;
+        border: none;
+        gap: 0;
+    }
+
+    .stay-input {
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 6px 6px 0 0;
+    }
+
+    .stay-btn {
+        border-radius: 0 0 6px 6px;
+    }
+
+    /* ================================================
+       FOOTER
+       ================================================ */
+    .site-footer {
+        padding: 3rem 0 2rem;
+    }
+
+    .footer-inner {
+        padding: 0 1.4rem;
+    }
+
+    .footer-top {
+        flex-direction: column;
+        gap: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .footer-brand {
+        max-width: 100%;
+    }
+
+    .footer-columns {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.8rem;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.8rem;
+        padding-top: 1.5rem;
+    }
+
+    .footer-legal {
+        gap: 1rem;
+    }
+
+    /* ================================================
+       HERO FULL BG (solution pages)
+       ================================================ */
+    .hero-full-bg {
+        height: 50vh;
+        min-height: 300px;
+    }
+
+    .hero-full-title {
+        font-size: 2.2rem;
+    }
+
+    .hero-full-subtitle {
+        font-size: 1rem;
+    }
+
+    /* ================================================
+       STARLINK PAGE
+       ================================================ */
+    /* The product block pulls up over the bottom of the hero photograph. That is a
+       desktop flourish and on a phone it collides with the hero copy: .sl-hero is
+       68vh with a 440px floor, so on a SHORT viewport the hero stops shrinking while
+       the title (which wraps to three lines under 400px) and this negative margin
+       both stay fixed. Measured: iPhone SE 320x568 and 375x667 put this block 37-39px
+       ON TOP of the subtitle, while 375x812 cleared it by 5px — same width, different
+       height, which is why it looked intermittent.
+
+       No overlap on mobile. The hero fade already carries the transition into white,
+       so nothing is lost visually, and the layout can no longer depend on how tall
+       someone's phone happens to be. */
+    .sl-products {
+        margin-top: 0;
+        padding: 1.5rem 1.2rem 3rem;
+    }
+
+    /* 10vh of top padding is real dead space on a 568px screen, but only these heroes
+       are short of room — the four .sl-hero pages with nothing beneath them keep their
+       composition. Nothing pulls up into the hero at this width, so no bottom
+       reservation either. */
+    .sl-hero:has(+ .sl-products) {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    .sl-products-grid,
+    .sl-products-grid-4 {
+        grid-template-columns: 1fr;
+    }
+
+    /* Cover-fit hero image on mobile so desktop's left:36%/min-width:64% positioning
+       doesn't crop awkwardly behind the dim overlay panel. */
+    .sl-hero-img {
+        left: 0;
+        width: 100%;
+        min-width: 100%;
+        object-fit: cover;
+    }
+
+    /* Accordion section: inline padding:4rem on starlink-mini/performance eats most
+       of a 390px viewport. !important is needed to beat the inline style. */
+    .sl-section.sl-accordion {
+        padding: 1.5rem !important;
+        border-radius: 12px !important;
+    }
+
+    /* ================================================
+       SD-WAN PAGE
+       ================================================ */
+    .sdw-page {
+        padding: 0 1.2rem;
+    }
+
+    .sdw-hero-statement {
+        padding: 60px 0 80px;
+    }
+
+    .sdw-ledger,
+    .sdw-spec-inset,
+    .sdw-comparative {
+        padding: 60px 0;
+    }
+
+    .sdw-asymmetric {
+        padding: 60px 0 40px;
+    }
+
+    .sdw-asymmetric::after {
+        display: none;
+    }
+
+    .sdw-asymmetric-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .sdw-asymmetric-headline {
+        padding-right: 0;
+        font-size: 2rem;
+    }
+
+    .sdw-asymmetric-cols {
+        padding-left: 0;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .sdw-data-strip-inner {
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+    }
+
+    .sdw-stagger {
+        padding: 60px 0 40px;
+    }
+
+    .sdw-stagger-block {
+        margin-left: 0 !important;
+    }
+
+    /* ================================================
+       HARDWARE PAGE
+       ================================================ */
+    .hw-science-cols {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .hw-features-inner {
+        grid-template-columns: 1fr;
+    }
+
+    /* ================================================
+       TOUCH TARGETS (>= 44x44 hit area)
+       Dots keep visual size; hit area expanded via padding + transparent background-clip.
+       ================================================ */
+    /* Keep the dot a clean small circle; expand the tap area with a transparent
+       border (background-clip:padding-box keeps the colour inside the dot).
+       This avoids the distorted shapes the content-box clip produced. */
+    .case-dot,
+    .dual-dot {
+        width: 9px;
+        height: 9px;
+        padding: 0;
+        border: 11px solid transparent;
+        background-clip: padding-box;
+        box-sizing: content-box;
+    }
+
+    .case-dot.active,
+    .dual-dot.active {
+        width: 30px;
+    }
+
+    /* Transparent borders already provide the spacing between dots. */
+    .cases-dots,
+    .dual-dots {
+        gap: 0;
+    }
+
+    .footer-col a,
+    .footer-legal a,
+    .footer-social a {
+        display: inline-block;
+        padding: 0.55rem 0;
+        line-height: 1.2;
+    }
+
+    .footer-col {
+        gap: 0;
+    }
+
+}
+/* END mobile media query */
+
+/* ============================================================
+   ACCESSIBILITY: reduced motion + touch-only hover handling
+   ============================================================ */
+
+/* Honor OS-level reduced-motion preference: kill transitions/animations.
+   JS-driven auto-advance is guarded separately in page scripts. */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* On touch devices, neutralize hover styles so taps don't leave them "stuck". */
+@media (hover: none) {
+    .tile:hover { opacity: 1; }
+    .case-dot:hover { background: var(--grey-300); }
+    .dual-dot:hover { background: var(--grey-200); }
+    .case-dot.active:hover { background: var(--grey-700); }
+    .dual-dot.active:hover { background: var(--grey-700); }
+    .footer-col a:hover { color: #a1a1a6; }
+    .footer-legal a:hover { color: #6e6e73; }
+    .sl-product-box:hover { box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05); }
+    .sdw-link:hover { text-decoration: none; }
+}
+
+/* ============================================================
+   ACCESSIBILITY: skip link + visible keyboard focus
+   ============================================================ */
+
+/* "Skip to content" — visually hidden until focused, then pinned top-left.
+   Lets keyboard/screen-reader users jump past the nav to <main id="main-content">. */
+.skip-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2000;
+    transform: translateY(-120%);
+    background: var(--blue-500);
+    color: #fff;
+    padding: 0.7rem 1.1rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border-radius: 0 0 8px 0;
+    transition: transform 0.15s ease;
+}
+.skip-link:focus {
+    transform: translateY(0);
+    outline: 2px solid #fff;
+    outline-offset: -4px;
+}
+
+/* Visible focus ring for keyboard users on every interactive element.
+   Uses :focus-visible so mouse clicks don't show the ring, only keyboard nav.
+   This was previously missing site-wide (WCAG 2.4.7). */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible,
+.nav-link:focus-visible,
+.filter-pill:focus-visible,
+.buy-btn:focus-visible,
+.case-dot:focus-visible,
+.dual-dot:focus-visible {
+    outline: 2px solid var(--blue-500);
+    outline-offset: 2px;
+    border-radius: 3px;
+}
+
+/* The newsletter input opts out of the default outline (outline:none above) —
+   restore a clear focus indicator for keyboard users. */
+.stay-input:focus-visible {
+    outline: 2px solid var(--blue-500);
+    outline-offset: 2px;
+}
+
+/* Dispatch cut-off note — shown on product + checkout pages. Keeps customers
+   informed of the "before 1pm = next working day" SLA before they buy/pay. */
+.dispatch-note {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    margin: 1rem 0 0;
+    padding: 0.65rem 0.85rem;
+    background: #f0f7ff;
+    border: 1px solid #d6e6fb;
+    border-radius: 8px;
+    font-size: 0.82rem;
+    line-height: 1.4;
+    color: #1e3a5f;
+}
+
+.dispatch-note svg {
+    flex-shrink: 0;
+    color: var(--blue-500);
+}
+
+.dispatch-note strong {
+    font-weight: 600;
+}
+
+/* ============================================================================
+   eSIM/IoT + SD-WAN,  ALIGNED TO THE STARLINK SECTION MODULE
+   ----------------------------------------------------------------------------
+   /esim-iot and /sdwan-managed-networking were built on a second design system
+   (.sdw-*) whose headers, measure and section rhythm all differed from the
+   .sl-section module the Starlink pages use: headings scaled to 2.4rem against a
+   fixed 1.8rem, body copy ran 1.05rem/400/#000 against 1rem/300/#333, and section
+   padding swung between 48px and 180px where Starlink holds a steady 4rem.
+
+   Rather than rewrite the bespoke ledger/stat/stagger components in both pages,
+   the shared chrome around them is mapped onto the Starlink values here, so the
+   two systems read as one. Anything genuinely specific to a component (grids,
+   dividers, counters) is untouched and still lives in the .sdw-* section above.
+
+   These rules sit at the end of the file deliberately: they must land after the
+   .sdw-* responsive blocks around lines 2565 and 3979, which would otherwise win
+   on the cascade and restore the old padding. The responsive counterparts below
+   mirror .sl-section's own @768 step-down.
+   ============================================================================ */
+
+/* The wrapper stops being a narrow padded column. Each section below now carries
+   the Starlink width and gutters itself, so the inner measure comes out at
+   1200px - 6rem, identical to .sl-section on /starlink-business. */
+.sdw-page {
+    max-width: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* The section variants are listed explicitly rather than left to the cascade:
+   each one sets its own 150-180px padding earlier in the file, and the intent
+   here is to replace those, not to override them by accident of source order. */
+.sdw-section,
+.sdw-hero-statement,
+.sdw-ledger,
+.sdw-spec-inset,
+.sdw-comparative,
+.sdw-asymmetric,
+.sdw-stagger {
+    position: relative;
+    z-index: 10;
+    background: #ffffff;
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 4rem 3rem;
+}
+
+/* Headers take .sl-section-title exactly. The opening statement heading is a
+   section heading like any other, so it steps down to the same size,  the only
+   oversized type on a Starlink page is the hero itself. */
+.sdw-heading,
+.sdw-heading-hero {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #000000;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+/* Body copy takes .sl-section-body exactly: lighter weight, softer grey, and the
+   640px measure that keeps a line readable. */
+.sdw-body,
+.sdw-hero-statement .sdw-body {
+    font-size: 1rem;
+    font-weight: 300;
+    color: #333333;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+    max-width: 640px;
+}
+
+/* The two full-bleed grey bands keep their colour and full width,  they are the
+   page's only change of rhythm,  but their inner column is brought onto the same
+   1200px measure and gutters as the cards above and below them. */
+.sdw-footer-inner,
+.sdw-data-strip-inner {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+
+@media (max-width: 768px) {
+
+    .sdw-section,
+    .sdw-hero-statement,
+    .sdw-ledger,
+    .sdw-spec-inset,
+    .sdw-comparative,
+    .sdw-asymmetric,
+    .sdw-stagger {
+        margin: 1rem auto;
+        padding: 2.5rem 1.5rem;
+    }
+
+    .sdw-footer-inner,
+    .sdw-data-strip-inner {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+}
+
+/* The asymmetric block's headline ran clamp(2.8rem, 5vw, 4.2rem)/800, nearly the size
+   of a hero title, which is what made this section read as a different page from the
+   Starlink ones. It is a section header like the rest, so it takes the same treatment;
+   the layout it heads (the two-column split beside it) is untouched. */
+.sdw-asymmetric-headline {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #000000;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+/* Figures in the grey stat strip already matched .sl-readout-value's 3rem; the weight
+   is brought to 800 so the two read identically where they sit side by side. */
+.sdw-stat-value {
+    font-weight: 800;
+}
+
+/* With the headline brought down to section-header size, the 2fr/3fr split left a
+   mostly empty column beside it and the vertical rule cut through the gap. Starlink's
+   sections set their header above their content, so this one now does the same:
+   a single column, no rule. The two text columns beneath it are unchanged. */
+.sdw-asymmetric-grid {
+    grid-template-columns: 1fr;
+}
+
+.sdw-asymmetric-cols {
+    padding-left: 0;
+    margin-top: 1rem;
+}
+
+.sdw-asymmetric::after {
+    display: none;
+}
+
+/* The comparison table has three prose columns and cannot fit a phone: at 390px it
+   measured 444px wide and body's overflow-x:hidden was clipping the third column
+   outright rather than letting anyone reach it. It scrolls in its own container now,
+   so the section keeps the page's width and the table keeps its content. */
+.sdw-table-scroll {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.sdw-table-scroll .sdw-table {
+    min-width: 620px;
+}
+</style>
+    <style>
+        /* ── Hero overrides ── */
+        .sl-hero-left-panel {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: linear-gradient(to right, #1e3a5f 0%, #1e3a5f 36%, rgba(14,27,46,0) 66%);
+            z-index: 2;
+            pointer-events: none;
+        }
+        .sl-hero { justify-content: flex-start; text-align: left; }
+        .sl-hero-content { padding-left: clamp(2rem, 5vw, 5rem); max-width: 46%; }
+        .sl-hero-title, .sl-hero-subtitle { text-shadow: none; }
+        .sl-hero-img {
+            position: absolute;
+            top: 0; left: 36%;
+            width: 64%; height: 100%;
+            object-fit: cover;
+            object-position: center center;
+        }
+        .sl-hero-fade { display: none; }
+
+        @media (max-width: 768px) {
+            html { overflow-x: clip; }
+
+            .sl-hero {
+                justify-content: center;
+                text-align: center;
+                height: auto !important;
+                /* A floor, not a fixed ratio. `aspect-ratio: 4/3` tied the hero's height
+                   to the viewport width, so the box could end up smaller than the copy
+                   inside it — at 320px the title and subtitle needed 300px in a 240px
+                   hero, and overflow:hidden cut the top off the headline. A min-height
+                   keeps the photograph its presence while letting the copy grow. */
+                min-height: min(76vw, 340px) !important;
+                padding: 2.25rem 1rem;
+            }
+            .sl-hero::after {
+                content: '';
+                position: absolute;
+                inset: 0;
+                background: rgba(0,0,0,0.42);
+                z-index: 2;
+            }
+            .sl-hero-content { max-width: 92%; padding: 0 0.5rem; z-index: 3; }
+            .sl-hero-left-panel { display: none; }
+            .sl-hero-img { left: 0; width: 100%; }
+            .sl-hero-fade { display: none; }
+            /* The shared clamp() floor is 2.8rem, which never shrinks however narrow the
+               screen gets — four lines of it is what overran the old fixed-height hero. */
+            .sl-hero-title {
+                font-size: clamp(1.85rem, 7.4vw, 2.9rem);
+                text-shadow: 0 2px 16px rgba(0,0,0,0.7);
+            }
+            .sl-hero-subtitle {
+                font-size: clamp(0.95rem, 3.5vw, 1.15rem);
+                text-shadow: 0 1px 8px rgba(0,0,0,0.6);
+            }
+        }
+
+
+
+        /* ── Package cards ── */
+        .vl-packages {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: auto auto 1fr auto; /* ribbon | header | body | footer */
+            gap: 0;
+            margin-top: 3rem;
+            align-items: stretch;
+        }
+
+        .vl-pkg {
+            border: 1px solid var(--grey-200);
+            display: grid;
+            grid-row: span 4;
+            grid-template-rows: subgrid;
+            transition: box-shadow 0.2s ease;
+            position: relative;
+            min-width: 0;
+        }
+        .vl-pkg:hover {
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+            z-index: 2;
+        }
+        .vl-pkg + .vl-pkg {
+            border-left: none;
+        }
+
+        .vl-pkg-ribbon-slot {
+            min-height: 0;
+        }
+        .vl-pkg-header {
+            padding: 1rem 1.8rem 1.6rem;
+            border-bottom: 1px solid var(--grey-200);
+            display: flex;
+            flex-direction: column;
+        }
+        .vl-pkg-level {
+            font-size: 0.65rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 0.6rem;
+        }
+        .vl-pkg-name {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--grey-900);
+            letter-spacing: -0.02em;
+            margin-bottom: 0.3rem;
+        }
+        .vl-pkg-tagline {
+            font-size: 0.82rem;
+            font-weight: 300;
+            color: var(--grey-500);
+            line-height: 1.4;
+        }
+        .vl-pkg-price-group {
+            margin-top: auto;
+            padding-top: 1.2rem;
+        }
+        .vl-pkg-price {
+            font-size: 2.4rem;
+            font-weight: 800;
+            color: var(--grey-900);
+            letter-spacing: -0.03em;
+            line-height: 1;
+        }
+        .vl-pkg-price-note {
+            font-size: 0.78rem;
+            font-weight: 400;
+            color: var(--grey-500);
+            margin-top: 0.3rem;
+        }
+        .vl-pkg-price-alt {
+            font-size: 0.72rem;
+            font-weight: 400;
+            color: var(--grey-400);
+            margin-top: 0.4rem;
+        }
+
+        .vl-pkg-body {
+            padding: 1.6rem 1.8rem;
+            display: flex;
+            flex-direction: column;
+        }
+        .vl-pkg-desc {
+            font-size: 0.82rem;
+            font-weight: 300;
+            color: var(--grey-700);
+            line-height: 1.65;
+            margin-bottom: 1.4rem;
+        }
+        .vl-pkg-features {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 1.4rem;
+            flex: 1;
+        }
+        .vl-pkg-features li {
+            font-size: 0.8rem;
+            font-weight: 400;
+            color: var(--grey-700);
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--grey-100);
+            display: flex;
+            align-items: flex-start;
+            gap: 0.6rem;
+            line-height: 1.5;
+        }
+        .vl-pkg-features li:last-child { border-bottom: none; }
+        .vl-pkg-features .vl-tick {
+            flex-shrink: 0;
+            margin-top: 0.15rem;
+            font-weight: 600;
+            font-size: 0.7rem;
+        }
+
+        .vl-pkg-best {
+            margin-top: 1.1rem;
+            padding: 0.8rem 0.95rem;
+            background: rgba(255,255,255,0.75);
+            border-left: 3px solid var(--grey-300);
+            border-radius: 0 8px 8px 0;
+            font-size: 0.88rem;
+            font-weight: 500;
+            color: var(--grey-900);
+            line-height: 1.45;
+        }
+        .vl-pkg-best strong {
+            display: block;
+            margin-bottom: 0.25rem;
+            font-size: 0.68rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--grey-600);
+        }
+
+        .vl-pkg-footer {
+            padding: 0 1.8rem 1.8rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+            align-self: end;
+        }
+
+        .vl-btn-primary {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            min-height: 48px;
+            padding: 0.75rem 1rem;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.82rem;
+            font-weight: 600;
+            text-align: center;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: all 0.15s ease;
+            box-sizing: border-box;
+        }
+
+        /* ── Level 1: Lightest blue ── */
+        .vl-pkg--l1 .vl-pkg-ribbon-slot { background: #f0f7ff; }
+        .vl-pkg--l1 .vl-pkg-header { background: #f0f7ff; }
+        .vl-pkg--l1 .vl-pkg-level { color: #60a5fa; }
+        .vl-pkg--l1 .vl-tick { color: #60a5fa; }
+        .vl-pkg--l1 .vl-btn-primary { background: #93c5fd; color: #1e3a5f; }
+        .vl-pkg--l1 .vl-btn-primary:hover { background: #60a5fa; }
+        .vl-pkg--l1 .vl-pkg-best { border-left-color: #60a5fa; }
+        .vl-pkg--l1 .vl-pkg-best strong { color: #3b82f6; }
+
+        /* ── Level 2: Light-medium blue ── */
+        .vl-pkg--l2 .vl-pkg-ribbon-slot { background: #dbeafe; }
+        .vl-pkg--l2 .vl-pkg-header { background: #dbeafe; }
+        .vl-pkg--l2 .vl-pkg-level { color: #3b82f6; }
+        .vl-pkg--l2 .vl-tick { color: #3b82f6; }
+        .vl-pkg--l2 .vl-btn-primary { background: #60a5fa; color: #ffffff; }
+        .vl-pkg--l2 .vl-btn-primary:hover { background: #3b82f6; }
+        .vl-pkg--l2 .vl-pkg-best { border-left-color: #3b82f6; }
+        .vl-pkg--l2 .vl-pkg-best strong { color: #2563eb; }
+
+        /* ── Level 3: Medium-dark blue (featured) ── */
+        .vl-pkg--l3 {
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 1px #3b82f6;
+            z-index: 1;
+        }
+        .vl-pkg--l3 .vl-pkg-header { background: #3b82f6; }
+        .vl-pkg--l3 .vl-pkg-header .vl-pkg-level { color: rgba(255,255,255,0.72); }
+        .vl-pkg--l3 .vl-pkg-header .vl-pkg-name { color: #ffffff; }
+        .vl-pkg--l3 .vl-pkg-header .vl-pkg-tagline { color: rgba(255,255,255,0.85); }
+        .vl-pkg--l3 .vl-pkg-header .vl-pkg-price { color: #ffffff; }
+        .vl-pkg--l3 .vl-pkg-header .vl-pkg-price-note { color: rgba(255,255,255,0.78); }
+        .vl-pkg--l3 .vl-pkg-header .vl-pkg-price-alt { color: rgba(255,255,255,0.65); }
+        .vl-pkg--l3 .vl-pkg-header .vl-pkg-best { color: #ffffff; background: rgba(255,255,255,0.14); border-left-color: #ffffff; }
+        .vl-pkg--l3 .vl-pkg-header .vl-pkg-best strong { color: rgba(255,255,255,0.8); }
+        .vl-pkg--l3 .vl-tick { color: #3b82f6; }
+        .vl-pkg--l3 .vl-btn-primary { background: #3b82f6; color: #ffffff; }
+        .vl-pkg--l3 .vl-btn-primary:hover { background: #2563eb; }
+
+        .vl-pkg-ribbon {
+            background: #3b82f6;
+            color: #ffffff;
+            font-size: 0.6rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            text-align: center;
+            padding: 0.22rem 0;
+        }
+
+        /* ── Level 4: Gold Standard — polished metallic gold ── */
+        .vl-pkg--l4 { border-color: #caa42c; }
+        .vl-pkg--l4:hover { box-shadow: 0 6px 28px rgba(176,132,11,0.28); }
+
+        /* metallic field: dark bronze edges, champagne highlight through the middle */
+        .vl-pkg--l4 .vl-pkg-ribbon-slot,
+        .vl-pkg--l4 .vl-pkg-header {
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg,
+                #b8901f 0%,
+                #e7c75c 20%,
+                #f9ecb4 43%,
+                #e8c95f 58%,
+                #c69a2b 80%,
+                #f2d97e 100%);
+        }
+        /* top gloss + lower bevel + gold seam to the white body */
+        .vl-pkg--l4 .vl-pkg-header {
+            border-bottom-color: #d9bd63;
+            box-shadow:
+                inset 0 1px 0 rgba(255,255,255,0.55),
+                inset 0 -1px 0 rgba(122,90,12,0.35);
+        }
+        /* slow sheen sweep — sits BEHIND the text, so it only ever lightens the backdrop */
+        .vl-pkg--l4 .vl-pkg-header::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(115deg,
+                rgba(255,255,255,0) 38%,
+                rgba(255,255,255,0.6) 50%,
+                rgba(255,255,255,0) 62%);
+            background-size: 250% 100%;
+            background-repeat: no-repeat;
+            animation: vl-gold-sheen 5.5s ease-in-out infinite;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .vl-pkg--l4 .vl-pkg-header > * { position: relative; z-index: 1; }
+        @keyframes vl-gold-sheen {
+            0%   { background-position: 165% 0; }
+            55%  { background-position: -65% 0; }
+            100% { background-position: -65% 0; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .vl-pkg--l4 .vl-pkg-header::after { animation: none; }
+        }
+
+        /* dark espresso text for contrast on the gold */
+        .vl-pkg--l4 .vl-pkg-header .vl-pkg-level { color: #6e5512; }
+        .vl-pkg--l4 .vl-pkg-header .vl-pkg-name { color: #271d04; text-shadow: 0 1px 0 rgba(255,255,255,0.35); }
+        .vl-pkg--l4 .vl-pkg-header .vl-pkg-tagline { color: #5b4712; }
+        .vl-pkg--l4 .vl-pkg-header .vl-pkg-price { color: #241a02; text-shadow: 0 1px 0 rgba(255,255,255,0.35); }
+        .vl-pkg--l4 .vl-pkg-header .vl-pkg-price-note { color: #5b4712; }
+        .vl-pkg--l4 .vl-pkg-header .vl-pkg-price-alt { color: #6e5a22; }
+        .vl-pkg--l4 .vl-pkg-header .vl-pkg-best { color: #271d04; background: rgba(255,255,255,0.5); border-left-color: #7a5b0c; }
+        .vl-pkg--l4 .vl-pkg-header .vl-pkg-best strong { color: #5f4708; }
+        .vl-pkg--l4 .vl-tick { color: #a67c00; }
+        .vl-pkg--l4 .vl-btn-primary {
+            background: linear-gradient(135deg, #c69a2b 0%, #f4dd86 50%, #c69a2b 100%);
+            color: #2a2006;
+            font-weight: 700;
+        }
+        .vl-pkg--l4 .vl-btn-primary:hover {
+            background: linear-gradient(135deg, #d3a832 0%, #fbe9a4 50%, #d3a832 100%);
+        }
+
+        /* ── Card photo + VAT note ── */
+        .vl-pkg-img {
+            background: #ffffff;
+            border-radius: 6px;
+            aspect-ratio: 1;
+            max-height: 220px;
+            margin: 0.4rem 0 1.1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .vl-pkg-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            padding: 0.6rem;
+            box-sizing: border-box;
+        }
+        .vl-pkg-vat {
+            font-size: 0.8rem;
+            font-weight: 500;
+            margin-left: 0.4rem;
+            opacity: 0.75;
+            letter-spacing: 0;
+        }
+
+        /* ── Notice boxes ── */
+        .vl-notice {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+            padding: 1.4rem 1.8rem;
+            border: 1px solid var(--grey-200);
+            font-size: 0.82rem;
+            font-weight: 400;
+            color: var(--grey-700);
+            line-height: 1.65;
+        }
+        .vl-notice strong {
+            font-weight: 600;
+            color: var(--grey-900);
+        }
+        .vl-notice--blue {
+            background: #eff6ff;
+            border-color: #bfdbfe;
+        }
+        .vl-notice--green {
+            background: #f0fdf4;
+            border-color: #bbf7d0;
+        }
+        .vl-notice-icon {
+            font-size: 1.2rem;
+            flex-shrink: 0;
+            line-height: 1;
+            margin-top: 0.1rem;
+        }
+
+        /* ── Section divider ── */
+        .vl-divider {
+            width: 100%;
+            height: 1px;
+            background: var(--grey-200);
+            margin: 0;
+            border: none;
+        }
+
+        /* ── Intro lede ── */
+        .vl-intro {
+            max-width: 760px;
+            margin-top: 1.25rem;
+        }
+        .vl-intro p {
+            font-size: 1.02rem;
+            font-weight: 300;
+            color: var(--grey-700);
+            line-height: 1.75;
+            margin: 0 0 1rem;
+        }
+        .vl-intro p:last-child { margin-bottom: 0; }
+        .vl-intro strong { font-weight: 600; color: var(--grey-900); }
+
+        /* ── Responsive ── */
+        @media (max-width: 960px) {
+            .vl-packages {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .vl-pkg + .vl-pkg { border-left: 1px solid var(--grey-200); }
+            .vl-pkg:nth-child(odd) + .vl-pkg { border-left: none; }
+            .vl-pkg:nth-child(n+3) { border-top: none; }
+
+        }
+
+        @media (max-width: 768px) {
+            .vl-packages {
+                grid-template-columns: 1fr;
+            }
+            .vl-pkg + .vl-pkg {
+                border-left: 1px solid var(--grey-200);
+                border-top: none;
+            }
+            .vl-pkg--l3 { box-shadow: none; border: 1px solid #3b82f6; }
+
+        }
+    </style>
+    
+    <!-- seo:start (managed by tools/inject-seo.mjs) -->
+    <meta name="description" content="Campervan and motorhome Wi-Fi kits, pre-configured and tested in the UK. From a £35 pocket MiFi to 5G roof-aerial systems, multi-network SIM included.">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Anvil Mobile">
+    <meta property="og:title" content="Campervan &amp; Motorhome Wi-Fi Kits | Van Life | Anvil Mobile">
+    <meta property="og:description" content="Campervan and motorhome Wi-Fi kits, pre-configured and tested in the UK. From a £35 pocket MiFi to 5G roof-aerial systems, multi-network SIM included.">
+    <meta property="og:url" content="https://anvilmobile.com/solutions/vanlife-motorhomes">
+    <meta property="og:image" content="https://anvilmobile.com/assets/og/vanlife.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Campervan &amp; Motorhome Wi-Fi Kits | Van Life | Anvil Mobile">
+    <meta name="twitter:description" content="Campervan and motorhome Wi-Fi kits, pre-configured and tested in the UK. From a £35 pocket MiFi to 5G roof-aerial systems, multi-network SIM included.">
+    <meta name="twitter:image" content="https://anvilmobile.com/assets/og/vanlife.jpg">
+    <!-- seo:end -->
+    
+    
+    
+    
+    
+    
+<style>
+  .restored-build /* ── BUILD YOUR SYSTEM ── */
+  .build-bg { background: var(--white); }
+  .restored-build .build-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+  }
+  .restored-build .build-group {
+    background: var(--off-white);
+    border: 1.5px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .restored-build .build-header {
+    background: var(--anvil-dark);
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .restored-build .step-badge {
+    width: 26px; height: 26px;
+    background: var(--anvil-teal);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  .restored-build .build-header-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: white;
+    letter-spacing: 0.3px;
+  }
+  .restored-build .build-items { padding: 12px 16px; display: flex; flex-direction: column; gap: 8px; }
+  .restored-build .build-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 10px 12px;
+    cursor: pointer;
+    transition: border-color 0.15s, box-shadow 0.15s;
+  }
+  .restored-build .build-item:hover { border-color: var(--anvil-teal); box-shadow: 0 0 0 3px rgba(0,180,166,0.08); }
+  .restored-build .build-item input[type="checkbox"] {
+    width: 16px; height: 16px;
+    accent-color: var(--anvil-teal);
+    margin-top: 3px;
+    flex-shrink: 0;
+    cursor: pointer;
+  }
+  .restored-build .item-info { flex: 1; min-width: 0; }
+  .restored-build .item-name {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--anvil-dark);
+    line-height: 1.4;
+  }
+  .restored-build .item-name a {
+    color: var(--anvil-teal);
+    font-size: 11px;
+    text-decoration: none;
+    margin-left: 4px;
+  }
+  .restored-build .item-name a:hover { text-decoration: underline; }
+  .restored-build .item-kit { font-size: 11px; color: var(--muted); margin-top: 2px; }
+  .restored-build .item-price {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--anvil-dark);
+    white-space: nowrap;
+    margin-top: 4px;
+  }
+  .restored-build .build-footer { padding: 12px 16px 16px; }
+
+  .restored-build /* ── NOTICE BOXES ── */
+  .notice {
+    border-radius: 8px;
+    padding: 16px 20px;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    font-size: 13px;
+    line-height: 1.6;
+    margin-bottom: 28px;
+  }
+  .restored-build .notice-teal { background: var(--anvil-teal-l); border: 1px solid rgba(0,180,166,0.25); color: var(--anvil-dark); }
+  .restored-build .notice-green { background: #eafaf1; border: 1px solid rgba(39,174,96,0.25); color: var(--text); }
+  .restored-build .notice-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+  .restored-build .notice strong { color: var(--anvil-dark); }
+
+
+:root{--anvil-teal:#00b4a6;--anvil-teal-l:#e6f9f8;--anvil-dark:#0f1e2b;--off-white:#f7f9fb;--border:#dde4ea;--text:#1a2a3a;--muted:#6b7f91}
+.review-banner{padding:10px 20px;background:#fff3bf;color:#3e360e;text-align:center;font-size:13px;font-weight:600}.vanlifers-brand{background:#e4e7e9;text-align:center;padding:24px}.vanlifers-brand img{display:block;width:min(100%,850px);height:auto;margin:auto}.vanlifers-brand p{margin:12px 0 0;color:#173c59;font-size:13px}.sl-hero-img{position:absolute;width:100%;height:100%;object-fit:contain!important}.restored-build{padding:55px 0}.restored-build .wrap{max-width:1200px;margin:auto;padding:0 24px}.section-eyebrow{color:#007b73;font-size:12px;letter-spacing:2px;text-transform:uppercase}.section-title{font-size:36px;margin:10px 0 24px;color:#102a3a}.review-note{background:#fff7d8;border-left:4px solid #e1b427;padding:15px 18px;font-size:14px;line-height:1.6;margin:15px 0 25px}.restored-build .btn-buy{border:0;background:#008f85;color:white;padding:12px;width:100%;border-radius:5px;cursor:pointer}.selection-review{margin:0 24px 30px;padding:18px;border:1px solid #a9c9c5;border-radius:8px;background:#f1faf8;color:#183c37}.esim-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.esim-grid article{border:1px solid #dce3e7;padding:22px;border-radius:8px;background:white}.esim-grid h3{font-size:20px;margin:0 0 12px}.esim-grid p{line-height:1.7;font-size:15px}.esim-review{border-top:1px solid #ddd;padding-top:45px!important}@media(max-width:700px){.esim-grid{grid-template-columns:1fr}.restored-build .build-grid{grid-template-columns:1fr}.vanlifers-brand{padding:16px}.section-title{font-size:28px}}
+</style><style>.vanlifers-stamp{float:right;width:190px;height:auto;margin:0 0 22px 30px}.vl-intro:after{content:"";display:block;clear:both}@media(max-width:600px){.vanlifers-stamp{float:none;display:block;width:160px;margin:20px auto}}</style><style>
+.vanlifers-brand{padding:8px 20px;background:#e5e8ea}.vanlifers-brand img{width:auto;max-width:100%;height:110px;object-fit:contain;margin:auto}.vanlifers-brand p{font-size:12px;margin:3px 0 0}.sl-hero .sl-hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover!important}.sl-hero{aspect-ratio:auto!important}@media(max-width:600px){.vanlifers-brand img{height:76px}.sl-hero{height:42vh!important;min-height:290px!important}}
+</style><style>
+/* Final layout: independent full-width brand band and content-sized hero. */
+main#main-content{display:block;isolation:isolate}.vanlifers-brand{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;width:100%;max-width:none;margin:0;padding:18px 3vw 14px;box-sizing:border-box;overflow:hidden;z-index:0;background:linear-gradient(110deg,#e4e7e9,#f2f3f4,#dfe3e6)}.vanlifers-brand img{position:static!important;display:block;width:94%;max-width:none;height:clamp(155px,17vw,270px);max-height:none;object-fit:contain;flex:none;margin:0 auto 12px}.vanlifers-brand p{position:static;display:block;margin:0;padding:0;font-size:14px;line-height:1.5;text-align:center}.sl-hero{position:relative!important;display:flex!important;align-items:center!important;height:auto!important;min-height:460px!important;padding:65px 0!important;margin:0!important;overflow:hidden;isolation:isolate;box-sizing:border-box}.sl-hero .sl-hero-content{position:relative!important;transform:none!important;top:auto!important;bottom:auto!important;padding:0 4vw!important;width:50%;max-width:720px;box-sizing:border-box;z-index:3}.sl-hero .sl-hero-title{font-size:clamp(34px,4vw,66px)!important;line-height:1.08!important;margin:0 0 22px!important}.sl-hero .sl-hero-subtitle{font-size:clamp(16px,1.4vw,21px)!important;line-height:1.55!important;margin:0!important}.sl-hero .sl-hero-img{left:36%!important;right:auto!important;width:64%!important;min-width:0!important;height:100%!important;object-fit:cover!important;object-position:75% 60%!important}.sl-hero-left-panel{z-index:2!important}
+@media(max-width:700px){.vanlifers-brand{padding:16px 10px}.vanlifers-brand img{width:100%;height:auto;max-height:180px}.vanlifers-brand p{font-size:11px}.sl-hero{min-height:360px!important;padding:48px 20px!important}.sl-hero .sl-hero-content{width:100%;max-width:100%;padding:0!important}.sl-hero .sl-hero-img{left:0!important;width:100%!important}.sl-hero .sl-hero-title{font-size:clamp(30px,8vw,48px)!important}}
+</style><style>
+.vanlifers-brand{padding:0!important;width:100%!important;max-width:none!important;overflow:visible!important}.vanlifers-brand img{display:block!important;width:100%!important;max-width:none!important;height:auto!important;max-height:none!important;object-fit:initial!important;margin:0!important;position:static!important}.vanlifers-brand p{width:100%;padding:10px 16px!important;box-sizing:border-box;margin:0!important}
+</style><style>.vanlifers-brand{display:block!important}.vanlifers-banner-art{position:relative;width:100%;aspect-ratio:6 / 1;overflow:hidden}.vanlifers-brand .vanlifers-banner-art img{position:absolute!important;left:0!important;top:50%!important;transform:translateY(-50%)!important;width:100%!important;height:auto!important;max-height:none!important;margin:0!important}.vanlifers-brand p{font-size:12px!important;padding:7px 12px!important}@media(max-width:700px){.vanlifers-banner-art{aspect-ratio:5.8 / 1}.vanlifers-brand p{font-size:10px!important}}</style></head>
+
+<body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+
+    <header class="site-header">
+        <div class="header-bar">
+            <a href="https://anvilmobile.com/home" class="header-logo">
+                <img src="images/VanLifers_Website_Review_img01.svg" alt="Anvil Mobile">
+            </a>
+            <a class="header-phone" href="tel:+441799218033" aria-label="Speak to a Specialist, call +44 1799 218033"><svg class="header-phone-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span class="header-phone-text"><span class="header-phone-label">Speak to a Specialist</span><span class="header-phone-number">+44 1799 218033</span></span></a>
+            <button class="mobile-menu-btn" aria-label="Open menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+
+            <nav class="header-nav" aria-label="Primary">
+                <ul class="nav-list">
+                    <li class="nav-item has-dropdown">
+                        <a href="https://anvilmobile.com/shop" class="nav-link">Store</a>
+                        <div class="dropdown-expand">
+                            <div class="dropdown-inner">
+                                <div class="dropdown-left">
+                                    <h3 class="dropdown-heading">Store</h3>
+                                </div>
+                                <div class="dropdown-links">
+                                    <div class="dropdown-col">
+                                        <a href="https://anvilmobile.com/shop">All Products</a>
+                                        <a href="https://anvilmobile.com/shop?category=antenna">Antennas</a>
+                                        <a href="https://anvilmobile.com/shop?category=mifi">MiFi Devices</a>
+                                        <a href="https://anvilmobile.com/shop?category=accessor">Accessories</a>
+                                        <a href="https://anvilmobile.com/shop?category=bundle">Bundles</a>
+                                        <a href="https://anvilmobile.com/shop?category=iot">IoT SIMs / eSIMs</a>
+                                        <a href="https://anvilmobile.com/data-plans">IoT Data Plans</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="nav-item has-dropdown">
+                        <a href="#" class="nav-link">Solutions</a>
+                        <div class="dropdown-expand">
+                            <div class="dropdown-inner">
+                                <div class="dropdown-left">
+                                    <h3 class="dropdown-heading">Solutions</h3>
+                                </div>
+                                <div class="dropdown-links">
+                                    <div class="dropdown-col">
+                                        <span class="dropdown-label">Connectivity</span>
+                                        <a href="https://anvilmobile.com/starlink-business">Starlink for Business</a>
+                                        <a href="https://anvilmobile.com/esim-iot">eSIM &amp; IoT</a>
+                                        <a href="https://anvilmobile.com/sdwan-managed-networking">SD-WAN &amp; Managed Networking</a>
+                                        <a href="https://anvilmobile.com/value-added-services">Value-Added Services</a>
+                                    </div>
+                                    <div class="dropdown-col">
+                                        <span class="dropdown-label">By Use Case</span>
+                                        <a href="https://anvilmobile.com/construction">Construction &amp; Temporary Sites</a>
+                                        <a href="https://anvilmobile.com/retail">Retail &amp; Payments</a>
+                                        <a href="https://anvilmobile.com/fleet-tracking">Transport &amp; Logistics</a>
+                                        <a href="https://anvilmobile.com/sim-for-cctv">Security &amp; CCTV</a>
+                                        <a href="https://anvilmobile.com/healthcare">Healthcare</a>
+                                        <a href="https://anvilmobile.com/renewable-energy">Renewable Energy</a>
+                                        <a href="https://anvilmobile.com/drones">Drones</a>
+                                        <a href="https://anvilmobile.com/solutions/vanlife-motorhomes">Van Life &amp; Motor Homes</a>
+                                    </div>
+                                    <div class="dropdown-col">
+                                        <span class="dropdown-label">5G SIM Cards</span>
+                                        <a href="https://anvilmobile.com/5g-fixed-ip-sims">5G Fixed IP SIMs</a>
+                                        <a href="https://anvilmobile.com/multi-network-sims">Multi-network SIMs</a>
+                                        <a href="https://anvilmobile.com/5g-m2m-sims">5G M2M SIMs</a>
+                                        <a href="https://anvilmobile.com/5g-high-data-usage">5G High Data Usage</a>
+                                        <a href="https://anvilmobile.com/5g-adsl-replacement">5G ADSL Replacement</a>
+                                        <a href="https://anvilmobile.com/5g-iot-sims-2">5G IoT SIMs</a>
+                                        <a href="https://anvilmobile.com/5g-routers-for-iot">5G Routers for IoT</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="nav-item has-dropdown">
+                        <a href="#" class="nav-link">Resources</a>
+                        <div class="dropdown-expand">
+                            <div class="dropdown-inner">
+                                <div class="dropdown-left">
+                                    <h3 class="dropdown-heading">Resources</h3>
+                                </div>
+                                <div class="dropdown-links">
+                                    <div class="dropdown-col">
+                                        <a href="https://anvilmobile.com/blog?type=user-guide">User Guides</a>
+                                        <a href="https://anvilmobile.com/jasper-portal">KPN Jasper Portal</a>
+                                        <a href="https://anvilmobile.atlassian.net/servicedesk/">Support Ticket</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="nav-item has-dropdown">
+                        <a href="https://anvilmobile.com/blog" class="nav-link">Blogs &amp; Media</a>
+                        <div class="dropdown-expand">
+                            <div class="dropdown-inner">
+                                <div class="dropdown-left">
+                                    <h3 class="dropdown-heading">Blogs &amp; Media</h3>
+                                </div>
+                                <div class="dropdown-links">
+                                    <div class="dropdown-col">
+                                        <a href="https://anvilmobile.com/blog?type=article">Articles</a>
+                                        <a href="https://anvilmobile.com/blog?type=case-study">Case Studies</a>
+                                        <a href="https://anvilmobile.com/blog?type=product-news">Product News</a>
+                                        <a href="https://anvilmobile.com/blog?type=user-guide">User Guides</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="nav-item has-dropdown">
+                        <a href="#" class="nav-link">About Us</a>
+                        <div class="dropdown-expand">
+                            <div class="dropdown-inner">
+                                <div class="dropdown-left">
+                                    <h3 class="dropdown-heading">About Us</h3>
+                                </div>
+                                <div class="dropdown-links">
+                                    <div class="dropdown-col">
+                                        <a href="https://uk.trustpilot.com/review/anvilmobile.com">Trustpilot Reviews</a>
+                                        <a href="https://anvilmobile.com/contact-us">Contact</a>
+                                        <a href="https://anvilmobile.com/about">About Us</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="https://anvilmobile.com/contact-us" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+            <button class="site-search-btn" type="button" aria-label="Search this site" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></button>
+        </div>
+    </header>
+
+    <div class="review-banner">REVIEW COPY FOR CHRISTIAN · 16 October 2026 · Proposed additions; not a live shop</div><main id="main-content"><section class="vanlifers-brand" aria-label="VanLifers"><div class="vanlifers-banner-art"><img src="images/VanLifers_Website_Review_img02.png" alt="VanLifers — Designed by VanLifers, for VanLifers."></div><p>VanLifers connectivity range · Supplied and supported by Anvil Mobile</p></section>
+
+        <!-- ════════════════════════════════════
+             HERO
+             ════════════════════════════════════ -->
+        <section class="sl-hero" style="height: 54vh; min-height: 340px;">
+            <img src="images/VanLifers_Website_Review_img03.webp" alt="Campervan parked on a coastal clifftop at sunset, connected by a roof-mounted aerial" class="sl-hero-img" style="object-position:75% 60%;" fetchpriority="high">
+            <div class="sl-hero-left-panel"></div>
+            <div class="sl-hero-content">
+                <h1 class="sl-hero-title">Van Wi-Fi That Actually Works.</h1>
+                <p class="sl-hero-subtitle">Pre-configured, tested connectivity for campervans and motorhomes, backed by UK-based IT support.</p>
+            </div>
+            <div class="sl-hero-fade"></div>
+        </section>
+
+        <!-- ════════════════════════════════════
+             PACKAGES
+             ════════════════════════════════════ -->
+        <div class="sdw-page">
+
+            <!-- ════════════════════════════════════
+                 OUR APPROACH
+                 ════════════════════════════════════ -->
+            <section class="sdw-section" style="padding-top: 4rem; padding-bottom: 1.5rem;">
+                <span class="sdw-ledger-index">Our Approach</span>
+                <h2 class="sdw-heading" style="margin-bottom: 0.5rem;">Connectivity built around life on the road</h2>
+                <div class="vl-intro"><img class="vanlifers-stamp" src="images/VanLifers_Website_Review_img04.png" alt="Designed by VanLifers, for VanLifers — maker’s stamp"><p><strong>Systems designed by vanlifers for vanlifers — not systems designed by people in offices.</strong></p><p>A steel body can weaken the signal reaching equipment inside your van. A suitable roof-mounted aerial collects mobile signal and campsite Wi-Fi outside the vehicle.</p>
+                    <p>Life on the road does not run to a schedule, and your connection should not either. We build every kit around how vanlifers actually travel, matching the router, the aerial and the SIM to your van and your budget. Nothing here is a one-size box pulled off a shelf, and if your needs change, the system grows with you.</p>
+                    <p>You also get support from people who understand a steel-bodied van and a weak signal on a remote pitch. Every package is <strong>pre-configured and tested before it leaves us</strong>, so you are online from the first power-on. And if something is not right, you talk to a person, not a queue.</p>
+                </div>
+            </section>
+
+            <section class="sdw-section" style="padding-top: 4rem;">
+                <span class="sdw-ledger-index">The Full Range</span>
+                <h2 class="sdw-heading" style="margin-bottom: 0.5rem;">Four levels. One mission. Always connected.</h2>
+
+                <div class="vl-packages">
+
+                    <!-- LEVEL 1 — TravelBuddy -->
+                    <div class="vl-pkg vl-pkg--l1">
+                        <div class="vl-pkg-ribbon-slot"></div>
+                        <div class="vl-pkg-header">
+                            <div class="vl-pkg-img"><img src="images/VanLifers_Website_Review_img05.jpg" alt="TravelBuddy 4G pocket MiFi router" width="240" height="240" loading="lazy" decoding="async"></div>
+                            <div class="vl-pkg-level">Level 1: Entry</div>
+                            <div class="vl-pkg-name">TravelBuddy MiFi</div>
+                            <div class="vl-pkg-tagline">Stay connected wherever your journey takes you</div>
+                            <div class="vl-pkg-best"><strong>Best for</strong> Occasional trips, and anyone who wants Wi-Fi without installing anything</div>
+                            <div class="vl-pkg-price-group">
+                                <div class="vl-pkg-price">&pound;35<span class="vl-pkg-vat">inc VAT</span></div>
+                                <div class="vl-pkg-price-note">inc 1GB data</div>
+                                <div class="vl-pkg-price-alt">Available in Stealth Black, Star White, Shocking Pink</div>
+                            </div>
+                        </div>
+                        <div class="vl-pkg-body">
+                            <p class="vl-pkg-desc">A pocket-sized, PAYG 4G MiFi with a multi-network SIM covering Vodafone, EE, O2 and Three, plus 139 countries worldwide. No installation, no contract, no technical knowledge.</p>
+                            <ul class="vl-pkg-features">
+                                <li><span class="vl-tick">&#10003;</span>Connect up to 5 devices simultaneously</li>
+                                <li><span class="vl-tick">&#10003;</span>Multi-network SIM that uses EE, O2, Vodafone and Three, switches automatically</li>
+                                <li><span class="vl-tick">&#10003;</span>1GB free data included, works in the EU, UK, USA &amp; more</li>
+                                <li><span class="vl-tick">&#10003;</span>PAYG top-up online instantly, no apps, no contracts</li>
+                                <li><span class="vl-tick">&#10003;</span>Keeps your phone free, walk away and leave the Wi-Fi running</li>
+                                <li><span class="vl-tick">&#10003;</span>QR code setup, instant connection, zero configuration</li>
+                                <li><span class="vl-tick">&#10003;</span>Global coverage across 139 countries, same SIM works across the EU</li>
+                            </ul>
+                        </div>
+                        <div class="vl-pkg-footer">
+                            <a href="https://anvilmobile.com/shop/product?handle=travel-buddy-4g-mifi-router-35-00-inc-vat" class="vl-btn-primary">Buy Now for &pound;35</a>
+                        </div>
+                    </div>
+
+                    <!-- LEVEL 2 — Essential -->
+                    <div class="vl-pkg vl-pkg--l2">
+                        <div class="vl-pkg-ribbon-slot"></div>
+                        <div class="vl-pkg-header">
+                            <div class="vl-pkg-img"><img src="images/VanLifers_Website_Review_img06.jpg" alt="Essential Kit: Teltonika RUT200 router, window aerial, mains and 12V power leads, TravelBuddy SIM" width="240" height="240" loading="lazy" decoding="async"></div>
+                            <div class="vl-pkg-level">Level 2: Essential</div>
+                            <div class="vl-pkg-name">Essential Kit</div>
+                            <div class="vl-pkg-tagline">Reliable Wi-Fi in your van, without the signal dropouts</div>
+                            <div class="vl-pkg-best"><strong>Best for</strong> Couples, weekend tourers and steel-bodied vans, anyone who wants campsite Wi-Fi pickup</div>
+                            <div class="vl-pkg-price-group">
+                                <div class="vl-pkg-price">&pound;199<span class="vl-pkg-vat">inc VAT</span></div>
+                                <div class="vl-pkg-price-note">window / desk mount</div>
+                                <div class="vl-pkg-price-alt">or &pound;239 with roof mount aerial</div>
+                                <div class="vl-pkg-price-alt">Tested to order &middot; dispatched in 5&ndash;10 working days</div>
+                            </div>
+                        </div>
+                        <div class="vl-pkg-body">
+                            <p class="vl-pkg-desc">An installed 4G system built around the industrial Teltonika RUT200 router, pre-configured before dispatch. Choose the no-drill window/desk aerial, or the roof aerial that sits outside the metal body of your van for a stronger signal and better campsite Wi-Fi pickup.</p>
+                            <ul class="vl-pkg-features">
+                                <li><span class="vl-tick">&#10003;</span>Roof aerial: picks up signal and campsite Wi-Fi outside the van, not inside a metal box</li>
+                                <li><span class="vl-tick">&#10003;</span>Uses campsite Wi-Fi when it is there and switches to mobile data when it is not</li>
+                                <li><span class="vl-tick">&#10003;</span>Pre-configured, just plug in and go</li>
+                                <li><span class="vl-tick">&#10003;</span>Industrial-grade router with 128MB RAM</li>
+                                <li><span class="vl-tick">&#10003;</span>RutOS: band locking, WAN failover, auto-APN</li>
+                            </ul>
+                            <p class="vl-pkg-desc" style="margin-top:1.25rem;margin-bottom:0.5rem"><strong>In the kit</strong></p>
+                            <ul class="vl-pkg-features">
+                                <li><span class="vl-tick">&#43;</span>Teltonika RUT200 4G router</li>
+                                <li><span class="vl-tick">&#43;</span>Aerial: Panorama DMM-7-38 window / desk aerial, or LINOVISION 3-in-1 roof aerial with the roof option</li>
+                                <li><span class="vl-tick">&#43;</span>240V mains power supply and 12V cigarette-lighter lead</li>
+                                <li><span class="vl-tick">&#43;</span>Wall mount</li>
+                                <li><span class="vl-tick">&#43;</span>Pre-configured and tested before dispatch</li>
+                                <li><span class="vl-tick">&#43;</span>TravelBuddy multi-network PAYG SIM (EE, O2, Vodafone and Three) with 1GB of starter data, top up online, no contract</li>
+                            </ul>
+                        </div>
+                        <div class="vl-pkg-footer">
+                            <a href="https://anvilmobile.com/shop/product?handle=van-life-essential-kit" class="vl-btn-primary">Buy Now, from &pound;199</a>
+                        </div>
+                    </div>
+
+                    <!-- LEVEL 3 — Nomad Pro (Featured) -->
+                    <div class="vl-pkg vl-pkg--l3">
+                        <div class="vl-pkg-ribbon">Recommended</div>
+                        <div class="vl-pkg-header">
+                            <div class="vl-pkg-img"><img src="images/VanLifers_Website_Review_img07.jpg" alt="Nomad Pro Kit: GL.iNet GL-X3000 5G router, 7-in-1 roof aerial, 12V lead, wall mount, TravelBuddy SIM" width="240" height="240" loading="lazy" decoding="async"></div>
+                            <div class="vl-pkg-level">Level 3: Nomad Pro</div>
+                            <div class="vl-pkg-name">Nomad Pro Kit</div>
+                            <div class="vl-pkg-tagline">Fast, stable internet anywhere, built for full-time vanlife</div>
+                            <div class="vl-pkg-best"><strong>Best for</strong> Full-time travellers, remote workers and heavy internet users</div>
+                            <div class="vl-pkg-price-group">
+                                <div class="vl-pkg-price">&pound;549<span class="vl-pkg-vat">inc VAT</span></div>
+                                <div class="vl-pkg-price-note">5G + Wi-Fi 6</div>
+                                <div class="vl-pkg-price-alt">Router: GL.iNet GL-X3000 Spitz AX</div>
+                                <div class="vl-pkg-price-alt">Tested to order &middot; dispatched in 5&ndash;10 working days</div>
+                            </div>
+                        </div>
+                        <div class="vl-pkg-body">
+                            <p class="vl-pkg-desc">Fast 5G internet for full-time touring and working on the road, built around the GL.iNet GL-X3000 Spitz AX router. Wi-Fi 6 keeps streaming, video calls and every device in the van connected at once.</p>
+                            <ul class="vl-pkg-features">
+                                <li><span class="vl-tick">&#10003;</span>True 5G performance with a full 4&times;4 MIMO aerial</li>
+                                <li><span class="vl-tick">&#10003;</span>Wi-Fi 6 handles multiple devices without slowing down</li>
+                                <li><span class="vl-tick">&#10003;</span>Roof-mounted aerial picks up campsite Wi-Fi from outside the van</li>
+                                <li><span class="vl-tick">&#10003;</span>Dual SIM, switches networks automatically</li>
+                                <li><span class="vl-tick">&#10003;</span>GPS element included in the roof aerial</li>
+                            </ul>
+                            <p class="vl-pkg-desc" style="margin-top:1.25rem;margin-bottom:0.5rem"><strong>In the kit</strong></p>
+                            <ul class="vl-pkg-features">
+                                <li><span class="vl-tick">&#43;</span>GL.iNet GL-X3000 Spitz AX 5G router</li>
+                                <li><span class="vl-tick">&#43;</span>Teltonika PR1KC640 7-in-1 roof aerial</li>
+                                <li><span class="vl-tick">&#43;</span>12V cigarette-lighter lead</li>
+                                <li><span class="vl-tick">&#43;</span>Wall mount</li>
+                                <li><span class="vl-tick">&#43;</span>Pre-configured and tested before dispatch</li>
+                                <li><span class="vl-tick">&#43;</span>TravelBuddy multi-network PAYG SIM (EE, O2, Vodafone and Three) with 1GB of starter data, top up online, no contract</li>
+                            </ul>
+                        </div>
+                        <div class="vl-pkg-footer">
+                            <a href="https://anvilmobile.com/shop/product?handle=van-life-nomad-pro-kit" class="vl-btn-primary">Buy Now for &pound;549</a>
+                        </div>
+                    </div>
+
+                    <!-- LEVEL 4 — Gold Standard -->
+                    <div class="vl-pkg vl-pkg--l4">
+                        <div class="vl-pkg-ribbon-slot"></div>
+                        <div class="vl-pkg-header">
+                            <div class="vl-pkg-img"><img src="images/VanLifers_Website_Review_img08.jpg" alt="Gold Standard Kit: Teltonika RUTX50 5G router, 7-in-1 roof aerial, TravelBuddy SIM" width="240" height="240" loading="lazy" decoding="async"></div>
+                            <div class="vl-pkg-level">Level 4: Gold Standard</div>
+                            <div class="vl-pkg-name">Gold Standard Kit</div>
+                            <div class="vl-pkg-tagline">Maximum performance. Maximum reliability. No compromises.</div>
+                            <div class="vl-pkg-best"><strong>Best for</strong> Digital nomads, professional remote workers and demanding setups</div>
+                            <div class="vl-pkg-price-group">
+                                <div class="vl-pkg-price">&pound;699<span class="vl-pkg-vat">inc VAT</span></div>
+                                <div class="vl-pkg-price-note">Industrial 5G</div>
+                                <div class="vl-pkg-price-alt">Router: Teltonika RUTX50</div>
+                                <div class="vl-pkg-price-alt">Tested to order &middot; dispatched in 5&ndash;10 working days</div>
+                            </div>
+                        </div>
+                        <div class="vl-pkg-body">
+                            <p class="vl-pkg-desc">Industrial-grade 5G built around the Teltonika RUTX50 router, with a 7-in-1 roof aerial that adds outside Wi-Fi pickup and GPS. For vans that are a home and an office.</p>
+                            <ul class="vl-pkg-features">
+                                <li><span class="vl-tick">&#10003;</span>Dual SIM, switches networks automatically</li>
+                                <li><span class="vl-tick">&#10003;</span>Full 4&times;4 MIMO + GPS + advanced networking</li>
+                                <li><span class="vl-tick">&#10003;</span>5&times; Gigabit Ethernet for smart TVs, CCTV and NAS</li>
+                                <li><span class="vl-tick">&#10003;</span>&minus;40&deg;C to +75&deg;C rated, built for long-term installs</li>
+                                <li><span class="vl-tick">&#10003;</span>Full RutOS: VPN, firewall, remote management</li>
+                            </ul>
+                            <p class="vl-pkg-desc" style="margin-top:1.25rem;margin-bottom:0.5rem"><strong>In the kit</strong></p>
+                            <ul class="vl-pkg-features">
+                                <li><span class="vl-tick">&#43;</span>Teltonika RUTX50 5G router</li>
+                                <li><span class="vl-tick">&#43;</span>Teltonika PR1KC640 7-in-1 roof aerial</li>
+                                <li><span class="vl-tick">&#43;</span>12V hardwire power supply</li>
+                                <li><span class="vl-tick">&#43;</span>Click wall mount</li>
+                                <li><span class="vl-tick">&#43;</span>Pre-configured and tested before dispatch</li>
+                                <li><span class="vl-tick">&#43;</span>TravelBuddy multi-network PAYG SIM (EE, O2, Vodafone and Three) with 1GB of starter data, top up online, no contract</li>
+                            </ul>
+                        </div>
+                        <div class="vl-pkg-footer">
+                            <a href="https://anvilmobile.com/shop/product?handle=van-life-gold-standard-kit" class="vl-btn-primary">Buy Now for &pound;699</a>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+<div class="restored-build build-bg section" id="build">
+  <div class="wrap">
+    <div class="section-eyebrow">Choose the parts that suit your van</div>
+    <h2 class="section-title">Build Your System</h2><p class="review-note">FOR ANVIL REVIEW: Original component choices restored. The prices below are from the April concept and need confirmation. The Add to basket buttons demonstrate selections only; they do not place an order. Christian to connect these buttons to the shop’s cart, with confirmed prices and compatible component choices.</p>
+
+    <div class="notice notice-teal"><div class="notice-icon">⚙</div><div><strong>Set up and tested before dispatch.</strong> Choose your components below. Anvil to confirm current component prices, compatibility and how the setup charge is included before publication.</div></div>
+
+    <div class="build-grid">
+
+      <!-- STEP 1: ROUTERS -->
+      <div class="build-group">
+        <div class="build-header">
+          <div class="step-badge">1</div>
+          <div class="build-header-title">Choose Your Router</div>
+        </div>
+        <div class="build-items">
+          <label class="build-item">
+            <input type="checkbox" onchange="summarise(false)">
+            <div class="item-info">
+              <div class="item-name">Teltonika RUT200 <a href="https://www.comms-express.com/products/teltonika-rut200-industrial-cellular-4g-router/" target="_blank">↗</a></div>
+              <div class="item-kit">Essential Kit — 4G LTE Cat 4 · 128MB RAM · RutOS</div>
+              <div class="item-price">£135</div>
+            </div>
+          </label>
+          <label class="build-item">
+            <input type="checkbox" onchange="summarise(false)">
+            <div class="item-info">
+              <div class="item-name">GL.iNet GL-X3000 Spitz AX <a href="https://store-uk.gl-inet.com/products/spitz-ax-gl-x3000-wi-fi-6-ax3000-5g-nr-dual-sim-failover-openwrt-21-02" target="_blank">↗</a></div>
+              <div class="item-kit">Nomad Pro — 5G NR · Wi-Fi 6 AX3000 · Dual SIM</div>
+              <div class="item-price">£405</div>
+            </div>
+          </label>
+          <label class="build-item">
+            <input type="checkbox" onchange="summarise(false)">
+            <div class="item-info">
+              <div class="item-name">Teltonika RUTX50 <a href="https://routerstore.com/product/rutx50/" target="_blank">↗</a></div>
+              <div class="item-kit">Gold Standard — 5G CAT20 · Industrial · 5× Gigabit</div>
+              <div class="item-price">£528</div>
+            </div>
+          </label>
+        </div>
+        <div class="build-footer">
+          <button type="button" class="btn-buy" onclick="summarise()">Add to basket</button>
+        </div>
+      </div>
+
+      <!-- STEP 2: AERIALS -->
+      <div class="build-group">
+        <div class="build-header">
+          <div class="step-badge">2</div>
+          <div class="build-header-title">Choose Your Aerial</div>
+        </div>
+        <div class="build-items">
+          <label class="build-item">
+            <input type="checkbox" onchange="summarise(false)">
+            <div class="item-info">
+              <div class="item-name">LINOVISION 3-in-1 Roof Puck <a href="https://www.amazon.co.uk/LINOVISION-Antenna-Outdoor-compatible-Teltonika-Black/dp/B0F218JCLY" target="_blank">↗</a></div>
+              <div class="item-kit">Essential Roof Kit — 2× LTE MIMO + external Wi-Fi element · IP67</div>
+              <div class="item-price">£36</div>
+            </div>
+          </label>
+          <label class="build-item">
+            <input type="checkbox" onchange="summarise(false)">
+            <div class="item-info">
+              <div class="item-name">Panorama DMM-7-38 (window/desk/suction)</div>
+              <div class="item-kit">Essential Window Kit — 2×2 MIMO · No drilling required</div>
+              <div class="item-price">£44</div>
+            </div>
+          </label>
+          <label class="build-item">
+            <input type="checkbox" onchange="summarise(false)">
+            <div class="item-info">
+              <div class="item-name">Teltonika PR1KC640 7-in-1 Roof Antenna <a href="https://www.mouser.co.uk/ProductDetail/Teltonika/PR1KC640" target="_blank">↗</a></div>
+              <div class="item-kit">Nomad Pro / Gold Standard — 4×4 MIMO · 2× Wi-Fi · GPS</div>
+              <div class="item-price">£126</div>
+            </div>
+          </label>
+        </div>
+        <div class="build-footer">
+          <button type="button" class="btn-buy" onclick="summarise()">Add to basket</button>
+        </div>
+      </div>
+
+      <!-- STEP 3: POWER -->
+      <div class="build-group">
+        <div class="build-header">
+          <div class="step-badge">3</div>
+          <div class="build-header-title">Power Options</div>
+        </div>
+        <div class="build-items">
+          <label class="build-item">
+            <input type="checkbox" onchange="summarise(false)">
+            <div class="item-info">
+              <div class="item-name">240V Mains Plug Power Supply</div>
+              <div class="item-kit">Essential Kit</div>
+              <div class="item-price">£10.50</div>
+            </div>
+          </label>
+          <label class="build-item">
+            <input type="checkbox" onchange="summarise(false)">
+            <div class="item-info">
+              <div class="item-name">12V Cigarette Plug (Teltonika) <a href="https://shop.thetechnologydoctors.co.uk/products/teltonika-12v-car-adapter-power-supply" target="_blank">↗</a></div>
+              <div class="item-kit">Essential / Gold Standard</div>
+              <div class="item-price">£8.50</div>
+            </div>
+          </label>
+          <label class="build-item">
+            <input type="checkbox" onchange="summarise(false)">
+            <div class="item-info">
+              <div class="item-name">12V Cigarette Plug (GL-X3000, 5.5mm × 2.1mm)</div>
+              <div class="item-kit">Nomad Pro specific</div>
+              <div class="item-price">£7.00</div>
+            </div>
+          </label>
+          <label class="build-item">
+            <input type="checkbox" onchange="summarise(false)">
+            <div class="item-info">
+              <div class="item-name">12V Hardwire Power Supply</div>
+              <div class="item-kit">Gold Standard</div>
+              <div class="item-price">£11.50</div>
+            </div>
+          </label>
+        </div>
+        <div class="build-footer">
+          <button type="button" class="btn-buy" onclick="summarise()">Add to basket</button>
+        </div>
+      </div>
+
+      <!-- STEP 4: MOUNTING -->
+      <div class="build-group">
+        <div class="build-header">
+          <div class="step-badge">4</div>
+          <div class="build-header-title">Mounting Options</div>
+        </div>
+        <div class="build-items">
+          <label class="build-item">
+            <input type="checkbox" onchange="summarise(false)">
+            <div class="item-info">
+              <div class="item-name">Wall Mount (Teltonika RUT Series) <a href="https://offgridwifi.co.uk/product/teltonika-wall-surface-mounting-brackets/" target="_blank">↗</a></div>
+              <div class="item-kit">Essential Kit</div>
+              <div class="item-price">£11.99</div>
+            </div>
+          </label>
+          <label class="build-item">
+            <input type="checkbox" onchange="summarise(false)">
+            <div class="item-info">
+              <div class="item-name">Click Wall Mount (RUTX50 specific)</div>
+              <div class="item-kit">Gold Standard</div>
+              <div class="item-price">£22.00</div>
+            </div>
+          </label>
+          <label class="build-item">
+            <input type="checkbox" onchange="summarise(false)">
+            <div class="item-info">
+              <div class="item-name">Wall Mount (GL-X3000)</div>
+              <div class="item-kit">Nomad Pro</div>
+              <div class="item-price">£10.99</div>
+            </div>
+          </label>
+        </div>
+        <div class="build-footer">
+          <button type="button" class="btn-buy" onclick="summarise()">Add to basket</button>
+        </div>
+      </div>
+
+    </div><!-- /build-grid -->
+
+    
+
+  </div>
+</div>
+
+<div class="selection-review" role="status" aria-live="polite" id="selection-review">Select components above to review your choices.</div><section class="sdw-section esim-review" id="esim"><span class="sdw-ledger-index">eSIM & shared data</span><h2 class="sdw-heading">Your van and your mobile phones: one shared data account?</h2><p class="review-note">PLACEHOLDER FOR ANVIL — Explanation and product terms to be supplied before publication. The questions below are editorial prompts, not confirmed service claims.</p><div class="esim-grid">
+<article><h3>Get connected with an eSIM</h3><p>Explain what an eSIM is, which phones support it, how it is delivered and activated, and the standalone plans available. Distinguish starter data from the full range of top-up allowances.</p></article>
+<article><h3>Link your mobile phones to your data account</h3><p>Confirm whether the physical SIM in the router and additional phone eSIMs can share one allowance. Explain the number of linked SIMs, eligible plans, charges, top-ups and expiry rules in plain English.</p></article>
+<article><h3>Use your mobile phone away from the van</h3><p>Explain whether each phone connects independently to available mobile networks, including while the router is switched off. Make clear the difference between sharing an account and connecting to the van’s Wi-Fi.</p></article>
+<article><h3>What happens to your existing number?</h3><p>Confirm whether customers can replace their existing mobile SIM and port their number, with normal calls and texts, or whether this is data only and they must keep a separate mobile service for those functions.</p></article>
+<article><h3>Make calls using your shared data</h3><p>Want to make calls when your usual network has no signal, or calls abroad aren’t included in your plan? Use a free app such as WhatsApp to call other users of the same app over your shared eSIM data. Data allowance and coverage apply.</p></article></div></section>            <section class="sdw-section" style="padding-top: 0;">
+                <div class="vl-notice vl-notice--green" style="margin-top: 0;">
+                    <span class="vl-notice-icon">&#128737;</span>
+                    <div><strong>Every unit tested before dispatch.</strong> We power up and check every item before it leaves, so no factory DOA units go out. All components are covered by full manufacturer warranty.</div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Speak to a Specialist: van life wording (server.js skips its site-wide band when this exists) -->
+    <section class="specialist-cta" aria-labelledby="specialist-cta-heading">
+        <div class="specialist-cta-inner">
+            <img src="images/VanLifers_Website_Review_img09.svg" alt="" aria-hidden="true" class="specialist-cta-dots" loading="lazy" decoding="async">
+            <div class="specialist-cta-content">
+                <span class="specialist-cta-eyebrow">Speak to a Specialist</span>
+                <h2 id="specialist-cta-heading" class="specialist-cta-heading">Not sure which kit suits your van?</h2>
+                <p class="specialist-cta-text">Tell us about your van, where you travel and how you use the internet, and a UK-based specialist will point you to the right kit.</p>
+                <div class="specialist-cta-actions">
+                    <a href="tel:+441799218033" class="specialist-cta-btn">
+                        <svg class="specialist-cta-btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        Speak to a Specialist
+                    </a>
+                    <a href="https://anvilmobile.com/contact-us" class="specialist-cta-email">Or send us a message &rsaquo;</a>
+                </div>
+                <div class="specialist-cta-details">
+                    <a href="tel:+441799218033" class="specialist-cta-phone">+44 1799 218033</a>
+                    <span class="specialist-cta-sep" aria-hidden="true"></span>
+                    <span class="specialist-cta-hours">Mon&ndash;Fri, 9am&ndash;5pm</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stay Connected -->
+    <section class="stay-connected">
+        <div class="stay-connected-inner">
+            <h2 class="stay-heading">Stay Connected.</h2>
+            <p class="stay-subtext">Get the latest on connectivity solutions, product updates, and industry insights,
+                straight to your inbox.</p>
+            <form class="stay-form" onsubmit="event.preventDefault()">
+                <input type="email" class="stay-input" placeholder="Enter your email address" required>
+                <button type="submit" class="stay-btn">Subscribe</button>
+            </form>
+            <p class="stay-disclaimer">No spam. Occasional updates only.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <img src="images/VanLifers_Website_Review_img01.svg" alt="Anvil Mobile" class="footer-logo" loading="lazy" decoding="async">
+                    <p class="footer-tagline">Enterprise-grade connectivity, simplified.</p>
+                </div>
+                <div class="footer-columns">
+                    <div class="footer-col">
+                        <h4>Solutions</h4>
+                        <a href="https://anvilmobile.com/sdwan-managed-networking">SD-WAN &amp; Networking</a>
+                                        <a href="https://anvilmobile.com/starlink-business">Starlink for Business</a>
+                                        <a href="https://anvilmobile.com/esim-iot">eSIM &amp; IoT</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Resources</h4>
+                        <a href="https://anvilmobile.com/blog">Blog</a>
+                                        <a href="https://anvilmobile.com/blog?type=case-study">Case Studies</a>
+                                        <a href="https://anvilmobile.com/blog?type=product-news">Product News</a>
+                                        <a href="https://anvilmobile.com/blog?type=user-guide">User Guides</a>
+                                        <a href="https://anvilmobile.atlassian.net/servicedesk/">Support Ticket</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Company</h4>
+                        <a href="https://anvilmobile.com/about">About Us</a>
+                                        <a href="https://anvilmobile.com/contact-us">Contact</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Legal</h4>
+                        <a href="https://anvilmobile.com/gdpr-statement-privacy-policy">Privacy</a>
+                                        <a href="https://anvilmobile.com/shipping-policy">Shipping</a>
+                                        <a href="https://anvilmobile.com/refund-returns">Returns</a>
+                                        <a href="https://anvilmobile.com/payment-policy">Payment</a>
+                                        <a href="https://anvilmobile.com/anti-slavery-human-trafficking-policy">Anti-Slavery</a>
+                                        <a href="https://anvilmobile.com/disclaimer-for-anvil-mobile">Disclaimer</a>
+                                        <a href="https://anvilmobile.com/cookie-policy">Cookies</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copy">&copy; 2026 Anvil Mobile. All rights reserved.</p>
+                    <button type="button" class="consent-reopen" data-consent-reopen>Cookie settings</button>
+                <div class="footer-social">
+                    <a href="https://www.linkedin.com/company/anvil-mobile-ltd/" aria-label="LinkedIn" target="_blank" rel="noopener">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    
+
+    
+
+    
+    
+    
+<script>function summarise(scroll=true){const picked=[...document.querySelectorAll('.restored-build .build-item')].filter(x=>x.querySelector('input').checked).map(x=>x.querySelector('.item-name').textContent.replace('↗','').trim());const out=document.getElementById('selection-review');out.textContent=picked.length?'Your selection: '+picked.join(' · ')+'. Review demonstration only — Anvil to confirm pricing and checkout.':'Select components above to review your choices.';if(scroll)out.scrollIntoView({behavior:'smooth',block:'center'});}document.querySelectorAll('form').forEach(f=>f.addEventListener('submit',e=>{e.preventDefault();alert('Review copy only. Please use the live Anvil website to submit forms.')}));</script></body>
+
+</html>
